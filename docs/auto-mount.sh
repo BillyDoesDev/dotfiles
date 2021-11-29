@@ -7,5 +7,5 @@ sudo mkdir /mnt/Snorlax
 sudo blkid
 sudo nano /etc/fstab
 cat /etc/fstab
-# UUID=C8329D20329D1512	/mnt/Snorlax	ntfs	defaults	0	2
+# UUID=C8329D69696969696	/mnt/Snorlax	ntfs	defaults	0	2
 # this line above is appended to the /etc/fstab file
