@@ -1,6 +1,6 @@
 ## yes.
 
-The gimp thingy is at <\br>
+The gimp thingy is at </br>
 ```$HOME/.config/GIMP/2.10/```
 
 #
