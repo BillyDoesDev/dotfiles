@@ -5,6 +5,8 @@
 # of course you can do.  The sessionrc will be entirely rewritten every time
 # you quit GIMP.  If this file isn't found, defaults are used.
 
+# yea, fuck that ^
+
 (session-info "toplevel"
     (factory-entry "gimp-empty-image-window")
     (position 229 98)
