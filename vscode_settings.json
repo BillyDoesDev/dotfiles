@@ -1,8 +1,5 @@
 {
-    // "editor.bracketPairColorization.enabled": true,
     "window.titleBarStyle": "custom",
-    // "telemetry.enableTelemetry": false,
-    // "telemetry.enableCrashReporter": false,
 	"telemetry.telemetryLevel": "off",
 	"window.title": "(≧σ≦)ノ ${dirty}${activeEditorShort}${separator}${rootName}$",
 
@@ -19,7 +16,6 @@
         "breadcrumb.background": "#00b7ff18"
     },    
     "editor.fontSize": 15,
-    // "editor.fontFamily": "Hack",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "python.linting.pylintEnabled": true,
@@ -50,14 +46,6 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    // "mssql.connections": [
-    //     {
-    //         "server": "{{put-server-name-here}}",
-    //         "database": "{{put-database-name-here}}",
-    //         "user": "{{put-username-here}}",
-    //         "password": "{{put-password-here}}"
-    //     }
-    // ],
     "[javascript]": {
         "editor.defaultFormatter": "HookyQR.beautify"
     },
