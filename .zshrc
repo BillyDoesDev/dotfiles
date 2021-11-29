@@ -118,9 +118,9 @@ _comp_options+=(globdots)		# Include hidden files.
 # alias ytvid='ytdl -f "bestvideo[height<=?1080]+bestaudio/best"'
 # alias ytaudio='ytdl -f "bestaudio"'
 
-eval "$(oh-my-posh --init --shell zsh --config $HOME/.poshthemes/penguinZ.omp.json)"      # sets custom posh prompt
+# eval "$(oh-my-posh --init --shell zsh --config $HOME/.poshthemes/penguinZ.omp.json)"      # sets custom posh prompt
 
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh                               # loads autosuggestions plugin
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh                       # loads syntax highlighting plugin
+# source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh                               # loads autosuggestions plugin
+# source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh                       # loads syntax highlighting plugin
 
-neofetch --config ~/.config/neofetch/custom_config.conf | lolcat --seed 17
+# neofetch --config ~/.config/neofetch/custom_config.conf | lolcat --seed 17
