@@ -1,0 +1,64 @@
+{
+    // "editor.bracketPairColorization.enabled": true,
+    "window.titleBarStyle": "custom",
+    // "telemetry.enableTelemetry": false,
+    // "telemetry.enableCrashReporter": false,
+	"telemetry.telemetryLevel": "off",
+	"window.title": "(≧σ≦)ノ ${dirty}${activeEditorShort}${separator}${rootName}$",
+
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.cursorBlinking": "expand",
+    "workbench.colorCustomizations": {
+        "tab.activeBorderTop": "#00b7ff",
+        "tab.inactiveForeground": "#b8b8b8ad",
+        "sideBar.foreground": "#c0c0c0",
+        "sideBarTitle.foreground": "#EEEE",
+        "list.hoverForeground": "#ffffff",
+        "tab.activeBackground": "#00b7ff18",
+        "breadcrumb.background": "#00b7ff18"
+    },    
+    "editor.fontSize": 15,
+    // "editor.fontFamily": "Hack",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "terminal.integrated.fontFamily": "MesloLGM NF",
+    "python.pythonPath": "/mnt/Snorlax/Documents-X/Projects/venv_linux/bin/python",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.cursorStyle": "block",
+    "discord.removeLowerDetails": true,
+    "discord.removeRemoteRepository": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    // "mssql.connections": [
+    //     {
+    //         "server": "{{put-server-name-here}}",
+    //         "database": "{{put-database-name-here}}",
+    //         "user": "{{put-username-here}}",
+    //         "password": "{{put-password-here}}"
+    //     }
+    // ],
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+}
