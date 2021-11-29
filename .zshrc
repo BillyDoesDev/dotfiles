@@ -1,9 +1,9 @@
 # Enable colors and change prompt:
 autoload -U colors && colors
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-# PROMPT="
-# %F{#ee5950}%n%f%B%F{#b259bf}@%f%b%F{#7862e7}%m%f %B%F{#0088f3}→%f%b %U%F{#2a9de1}%~%f%u
-# %B%(?.%F{#0088f3}》%f.%F{red}》%f)%b"
+PROMPT="
+%F{#ee5950}%n%f%B%F{#b259bf}@%f%b%F{#7862e7}%m%f %B%F{#0088f3}→%f%b %U%F{#2a9de1}%~%f%u
+%B%(?.%F{#0088f3}》%f.%F{red}》%f)%b"
 
 ## Options section
 setopt correct                                                  # Auto correct mistakes
