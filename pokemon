@@ -1,0 +1,41 @@
+#!/usr/bin/python
+
+"""Script to print out colored pokemon sprites"""
+
+import os
+import random
+import sys
+from pathlib import Path
+
+home = Path.home()
+
+with open(os.path.join(home, "GitHub/pokemon-colorscripts/nameslist.txt"), mode="r", encoding="utf-8") as f:
+    pokemons = [_.strip() for _ in f.readlines()]
+    pokemon = random.choice(pokemons)
+    f.seek(0)
+    _display_ = True
+
+    if len(sys.argv) > 1: # args present
+        arg = sys.argv[1].lower()
+        if arg in pokemons:
+            pokemon = arg
+            
+        else:
+            _display_ = False
+            # invalid pokemon paased
+            # try to get all pokemons there are
+            
+            print(f"\u001b[38;5;39m{arg} was not found, however, we did find the following similar matches:\u001b[0;0;0m\n")
+
+            for sprite in pokemons:
+                similarity = sum([character in sprite for character in arg]) / len(arg) * 100
+                
+                if similarity > 83:
+                    print(sprite)
+
+    if _display_:
+        with open(os.path.join(home, f"GitHub/pokemon-colorscripts/colorscripts/{pokemon}.txt"), mode="r", encoding="utf-8") as f:
+            print(f.read())
+        print(pokemon)
+
+    
