@@ -17,7 +17,7 @@ Cool stuff: https://gitlab.com/phoneybadger/pokemon-colorscripts
 
 #
 I use KDE Plasma... and the default Kwallet thingy is annoying af</br>
-![image](https://user-images.githubusercontent.com/64155209/144050940-5610626e-024e-4cbc-80df-9617770fd48a.png)
+![image](https://user-images.githubusercontent.com/64155209/144050940-5610626e-024e-4cbc-80df-9617770fd48a.png)</br>
 Hence, uncheck the `Close when last application shtops using it` option
 
 
