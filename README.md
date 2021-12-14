@@ -4,8 +4,10 @@
 ### haha looks sicc, right xD
 
 #
-The gimp thingy is at </br>
-```$HOME/.config/GIMP/2.10/```
+The gimp thingy is at
+```sh
+$HOME/.config/GIMP/2.10/
+```
 
 #
 The zsh plugings are sicc and all.. clone them via:</br>
