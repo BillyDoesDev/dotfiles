@@ -6,6 +6,7 @@
     "files.autoSave": "afterDelay",
     "workbench.iconTheme": "material-icon-theme",
     "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": true, // make VSCode smooth
     "workbench.colorCustomizations": {
         "tab.activeBorderTop": "#00b7ff",
         "tab.inactiveForeground": "#b8b8b8ad",
@@ -27,7 +28,7 @@
     },
     "liveServer.settings.donotShowInfoMsg": true,
     "terminal.integrated.fontFamily": "MesloLGM NF",
-    "python.pythonPath": "/mnt/Snorlax/Documents-X/Projects/venv_linux/bin/python",
+    "python.pythonPath": "/path/to/your/python/interpreter",
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.cursorStyle": "block",
     "discord.removeLowerDetails": true,
