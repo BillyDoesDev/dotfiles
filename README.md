@@ -11,7 +11,8 @@ The gimp thingy is at </br>
 The zsh plugings are sicc and all.. clone them via:</br>
 ```sh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-```</br>
+```
+
 ```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
 ```
