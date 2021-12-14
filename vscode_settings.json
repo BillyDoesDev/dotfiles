@@ -6,7 +6,7 @@
     "files.autoSave": "afterDelay",
     "workbench.iconTheme": "material-icon-theme",
     "editor.cursorBlinking": "expand",
-    "editor.cursorSmoothCaretAnimation": true, // make VSCode smooth
+    "editor.cursorSmoothCaretAnimation": true,
     "workbench.colorCustomizations": {
         "tab.activeBorderTop": "#00b7ff",
         "tab.inactiveForeground": "#b8b8b8ad",
