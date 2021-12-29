@@ -3,6 +3,8 @@
 ![image](https://user-images.githubusercontent.com/64155209/147652622-ea27ccee-03a7-4846-ad0d-1e88e215cd8a.png)
 
 ### haha looks sicc, right xD
+The font used for the digital clock in the top panel is [Oswald](https://fonts.google.com/specimen/Oswald)
+
 
 #
 The gimp thingy is at
