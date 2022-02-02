@@ -2,8 +2,8 @@
 autoload -U colors && colors
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 PROMPT="
-%F{#ee5950}%n%f%B%F{#b259bf}@%f%b%F{#7862e7}%m%f %B%F{#0088f3}→%f%b %U%F{#2a9de1}%~%f%u
-%B%(?.%F{#0088f3}》%f.%F{red}》%f)%b"
+%F{#ee5950}%n%f%B%F{#b259bf}@%f%b%F{#7862e7}%m%f %B%F{#0088f3}→%f%b %F{#2a9de1}%~%f
+%B%(?.%F{#9aa9ad}$%f.%F{red}$%f)%b "
 
 ## Options section
 setopt correct                                                  # Auto correct mistakes
@@ -70,6 +70,7 @@ alias ll='ls -alF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias owoify="sed 's/r/w/g;s/l/w/g;s/na/nya/g;s/ne/nye/g;s/ni/nyi/g;s/no/nyo/g;s/nu/nyu/g;s/he/hye/g'"
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -111,7 +112,7 @@ autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots)               # Include hidden files.
 
 # echo -ne '\e[5 q' # Use beam shape cursor on startup.
 # preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
@@ -123,7 +124,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # eval "$(oh-my-posh --init --shell zsh --config $HOME/.poshthemes/penguinZ.omp.json)"      # sets custom posh prompt
 
-# source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh                               # loads autosuggestions plugin
-# source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh                       # loads syntax highlighting plugin
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh                               # loads autosuggestions plugin
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh                       # loads syntax highlighting plugin
 
 # neofetch --config ~/.config/neofetch/custom_config.conf | lolcat --seed 17
