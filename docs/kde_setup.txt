@@ -37,5 +37,3 @@ open kvantum > change and edit theme > select orchis dark
 
 # shit doesn't come with emoji fonts installed, smh.. do this to get it fixed:
 sudo pacman -S noto-fonts-emoji
-
-## enjoy
