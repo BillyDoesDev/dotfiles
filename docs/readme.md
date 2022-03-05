@@ -10,11 +10,11 @@ Widgets:
 - latte spacer
 - event calender
 
-window management > window behaviour > advanced > window placement: centered
-window management > KWin scripts > get new scripts > *install force blur by esjeon*
-workspace behaviour > desktop effects > blur (both light & noise at 50%); dim screen for admin mode; scale (under open/close animation)
-workspace behaviour > disable everything except the top left corner one.. and keep that at default
-search > krunner > position at center
+window management > window behaviour > advanced > window placement: centered</br>
+window management > KWin scripts > get new scripts > *install force blur by esjeon*</br>
+workspace behaviour > desktop effects > blur (both light & noise at 50%); dim screen for admin mode; scale (under open/close animation)</br>
+workspace behaviour > disable everything except the top left corner one.. and keep that at default</br>
+search > krunner > position at center</br>
 
 > shit to do with window colors, etc (idk if it's really necessary)
 https://youtu.be/zfOe1Kfb4WE?t=317
@@ -37,11 +37,11 @@ sudo pacman -S kvantum
 open kvantum > change and edit theme > select orchis dark
 
 ## Applying themes
- appearance > global theme > application style > kvantum dark (apply), then go to gnome/gtk application style... > choose orchis dark
- choose orchis in sddm as well
+ appearance > global theme > application style > kvantum dark (apply), then go to gnome/gtk application style... > choose orchis dark</br>
+ choose orchis in sddm as well</br>
 
- install the Robotto font.. and use it as global font
- use aritim dark as the konsole profile
+ install the Robotto font.. and use it as global font</br>
+ use aritim dark as the konsole profile</br>
 > I use this theme called sweet KDE btw
 
 **Also**
