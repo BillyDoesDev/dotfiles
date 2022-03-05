@@ -120,21 +120,4 @@
         </display>
     </area>
 
-    <area type="offsetx">
-        <display>
-            <font>Monospace 12</font>
-            <evenrow>
-                <evencolumn>
-                    <foreground>#e5e5e5</foreground>
-                    <background>#212121</background>
-                </evencolumn>
-            </evenrow>
-            <oddrow>
-                <evencolumn>
-                    <foreground>#e5e5e5</foreground>
-                    <background>#212121</background>
-                </evencolumn>
-            </oddrow>
-        </display>
-    </area>
 </layout>
