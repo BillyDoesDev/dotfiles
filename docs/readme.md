@@ -1,3 +1,55 @@
+# Fix mirrors
+sudo pacman-mirrors --country all --api --protocols all && sudo pacman -Syyu
+
+## Initial setup:
+
+Widgets:
+- latte separater
+- latte spacer
+- event calender
+
+window management > window behaviour > advanced > window placement: centered
+window management > KWin scripts > get new scripts > *install force blur by esjeon*
+workspace behaviour > desktop effects > blur (both light & noise at 50%); dim screen for admin mode; scale (under open/close animation)
+workspace behaviour > disable everything except the top left corner one.. and keep that at default
+search > krunner > position at center
+
+> shit to do with window colors, etc (idk if it's really necessary)
+https://youtu.be/zfOe1Kfb4WE?t=317
+
+## Theming
+```bash
+sudo pacman -Sy wget git
+git clone https://github.com/vinceliuice/Orchis-kde
+cd Orchis-kde;sudo sh ./install.sh;cd .. 
+git clone https://github.com/vinceliuice/Orchis-theme
+cd Orchis-theme;sudo sh ./install.sh;cd .. 
+wget -qO- https://git.io/papirus-icon-theme-install | sh
+```
+
+## Theme manager
+```bash
+sudo pacman -S kvantum
+```
+
+open kvantum > change and edit theme > select orchis dark
+
+## Applying themes
+ appearance > global theme > application style > kvantum dark (apply), then go to gnome/gtk application style... > choose orchis dark
+ choose orchis in sddm as well
+
+ install the Robotto font.. and use it as global font
+ use aritim dark as the konsole profile
+> I use this theme called sweet KDE btw
+
+**Also**
+```bash
+sudo pacman -S noto-fonts-emoji
+sudo pacman -S noto-fonts-cjk
+```
+
+---
+
 Replacing default bless icon...
 
 ```
