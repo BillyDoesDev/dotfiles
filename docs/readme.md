@@ -1,5 +1,7 @@
-# Fix mirrors
+## Fix mirrors
+```bash
 sudo pacman-mirrors --country all --api --protocols all && sudo pacman -Syyu
+```
 
 ## Initial setup:
 
