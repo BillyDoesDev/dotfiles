@@ -108,16 +108,5 @@
             </oddrow>
        </display>
     </area>
-
-    <area type="separator">
-        <display>
-            <evenrow>
-            <evencolumn>
-                <foreground>#4c4c4c</foreground>
-                <background>#212121</background>
-            </evencolumn>
-            </evenrow>
-        </display>
-    </area>
-
+    
 </layout>
