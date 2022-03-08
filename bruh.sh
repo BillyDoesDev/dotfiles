@@ -12,7 +12,7 @@ echo "127.0.0.1       localhost
 ::1             localhost
 127.0.1.1       billy.localdomain       billy" >> /etc/hosts
 
-pacman -Sy --needed base-devel vi nano grub efibootmgr os-prober neofetch htop xorg plasma firefox konsole dolphin gwenview mpv sof-firmware xf86-input-synaptics networkmanager iwd ntfs-3g --noconfirm
+pacman -Sy --needed base-devel vi nano git grub efibootmgr os-prober neofetch htop xorg plasma firefox konsole dolphin gwenview mpv sof-firmware xf86-input-synaptics networkmanager iwd ntfs-3g --noconfirm
 systemctl enable NetworkManager
 systemctl enable sddm
 
