@@ -13,7 +13,7 @@ echo "127.0.0.1       localhost
 127.0.1.1       billy.localdomain       billy" >> /etc/hosts
 
 pacman -Sy --needed base-devel vi nano grub efibootmgr os-prober neofetch htop xorg plasma firefox konsole dolphin gwenview mpv sof-firmware xf86-input-synaptics networkmanager iwd ntfs-3g
-systemctl enable networkmanager
+systemctl enable NetworkManager
 systemctl enable sddm
 
 mkdir /mnt2
