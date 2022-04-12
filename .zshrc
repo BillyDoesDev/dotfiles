@@ -1,6 +1,5 @@
 # Enable colors and change prompt:
 autoload -U colors && colors
-# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 PROMPT="
 %F{#ee5950}%n%f%B%F{#b259bf}@%f%b%F{#7862e7}%m%f %B%F{#0088f3}→%f%b %F{#2a9de1}%~%f
 %B%(?.%F{#9aa9ad}$%f.%F{red}$%f)%b "
@@ -71,6 +70,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias owoify="sed 's/r/w/g;s/l/w/g;s/na/nya/g;s/ne/nye/g;s/ni/nyi/g;s/no/nyo/g;s/nu/nyu/g;s/he/hye/g'"
+alias pacclean='sudo pacman -Scc && sudo pacman -Qdtq | sudo pacman -Rs -'
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -117,14 +117,26 @@ _comp_options+=(globdots)               # Include hidden files.
 # echo -ne '\e[5 q' # Use beam shape cursor on startup.
 # preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+
 ## PERSONAL CONFIG
-# alias ytdl='source /mnt/Snorlax/Documents-X/Projects/venv_linux/bin/activate && $HOME/Downloads/youtube-dl'
-# alias ytvid='ytdl -f "bestvideo[height<=?1080]+bestaudio/best"'
-# alias ytaudio='ytdl -f "bestaudio"'
+function compound(){
 
-# eval "$(oh-my-posh --init --shell zsh --config $HOME/.poshthemes/penguinZ.omp.json)"      # sets custom posh prompt
+    # downloads a given compound in the current working dir
+    # Example usage:
+    # compound 500 500 000000 breh
 
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh                               # loads autosuggestions plugin
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh                       # loads syntax highlighting plugin
+    if [ $# != 4 ]; then
+        echo "Usage: compound <x_res> <y_res> <fg_hex_code> <valid_compound_name>"
+        echo "The file will be saved in the current working dir"
+        else
+            curl -s -o "$4_$1x$2.png" "https://avogadr.io/api/name/$1/$2/$3/$4"
+            echo "$4_$1x$2.png"
+    fi
+}
 
-# neofetch --config ~/.config/neofetch/custom_config.conf | lolcat --seed 17
+#source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh                       # loads syntax highlighting plugin
+#neofetch --color_blocks off --disable model shell resolution de wm wm_theme theme icons term term_font cpu gpu --ascii_distro arch_small
+
+# Load spaceship zsh prompt
+#autoload -U promptinit; promptinit
+#prompt spaceship
