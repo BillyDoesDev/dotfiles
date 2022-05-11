@@ -1,6 +1,8 @@
 # yes.
 
-![image](https://user-images.githubusercontent.com/64155209/147652622-ea27ccee-03a7-4846-ad0d-1e88e215cd8a.png)
+<!---![image](https://user-images.githubusercontent.com/64155209/147652622-ea27ccee-03a7-4846-ad0d-1e88e215cd8a.png)--->
+![image](https://user-images.githubusercontent.com/64155209/167782972-710a59e5-96d1-4188-a292-7a0aad7b4403.png)
+![image](https://user-images.githubusercontent.com/64155209/167783477-eaccf80d-2b74-4641-a312-d84937e58e22.png)
 
 ### haha looks sicc, right xD
 The font used for the digital clock in the top panel is [Oswald](https://fonts.google.com/specimen/Oswald)
