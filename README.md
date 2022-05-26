@@ -25,6 +25,12 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git
 ```
 
 #
+Global Menu widget (default KDE one sucks)
+```sh
+git clone https://github.com/psifidotos/applet-window-appmenu
+```
+
+#
 Cool stuff: https://gitlab.com/phoneybadger/pokemon-colorscripts
 
 #
