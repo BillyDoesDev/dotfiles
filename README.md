@@ -31,7 +31,10 @@ git clone https://github.com/psifidotos/applet-window-appmenu
 ```
 
 #
-Cool stuff: https://gitlab.com/phoneybadger/pokemon-colorscripts
+Cool stuff: 
+- [ASCII Pokemon Sprites](https://gitlab.com/phoneybadger/pokemon-colorscripts)
+- [API to get exact scene from an anime screenshot](https://soruly.github.io/trace.moe-api/)
+> **Note:** The stuff above isn't mine, please give credit to the original authors.
 
 #
 Sometimes, nano might not have syntax highlighting by default</br>
