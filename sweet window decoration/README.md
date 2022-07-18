@@ -1,0 +1,30 @@
+## Custom window decoration for KDE
+
+Window decoration files are stored at
+```sh
+~/.local/share/aurorae/themes/
+```
+To use this theme, make a new directory with the name of your choice, and `cd` into it
+```
+mkdir Sweet-Datk-transparent-remix
+cd Sweet-Datk-transparent-remix
+```
+Then, put in the contents of this folder over there
+```sh
+$ ls -l .
+total 248
+-rw-r--r-- 1 billy users 20686 Mar 10 19:10 alldesktops.svg
+-rw-r--r-- 1 billy users 20313 Apr 28 13:25 close_og.svg
+-rwxrwxrwx 1 billy users 16596 Apr 28 13:26 close.svg
+-rw-r--r-- 1 billy users 18620 Mar 10 19:10 decoration.svg
+-rw-r--r-- 1 billy users 21144 Mar 10 19:10 keepabove.svg
+-rw-r--r-- 1 billy users 20857 Mar 10 19:10 keepbelow.svg
+-rw-r--r-- 1 billy users 18747 Mar 10 19:10 maximize_og.svg
+-rwxrwxrwx 1 billy users 15057 Apr 28 13:27 maximize.svg
+-rw-r--r-- 1 billy users   322 Mar 10 19:10 metadata.desktop
+-rw-r--r-- 1 billy users 18773 Mar 10 19:10 minimize_og.svg
+-rwxrwxrwx 1 billy users 15182 Apr 28 13:27 minimize.svg
+-rw-r--r-- 1 billy users 18747 Mar 10 19:10 restore_og.svg
+-rwxrwxrwx 1 billy users 15057 Apr 28 13:27 restore.svg
+-rw-r--r-- 1 billy users   876 Mar 10 19:10 Sweet-Dark-transparentrc
+```
