@@ -1,4 +1,5 @@
 ## Custom window decoration for KDE
+![image](https://user-images.githubusercontent.com/64155209/179492853-d9beef5f-d73a-4910-872b-39571fc3f9e8.png)
 
 Window decoration files are stored at
 ```sh
