@@ -9,9 +9,26 @@ To use this theme, make a new directory with the name of your choice, and `cd` i
 mkdir Sweet-Datk-transparent-remix
 cd Sweet-Datk-transparent-remix
 ```
-Then, put in the contents of this folder over there
+Then, put in the contents of this folder over there. </br>
+To quickly get them downloaded, do:
 ```sh
-$ ls -l .
+git clone \
+  --depth 1  \
+  --filter=blob:none  \
+  --sparse \
+  https://github.com/BillyDoesDev/dotfiles/ \
+;
+cd dotfiles
+git sparse-checkout set "sweet window decoration"
+
+## Move this stuff to ../
+# mv -r * ../
+# cd ..
+```
+---
+```sh
+$ ls -l ~/.local/share/aurorae/themes/Sweet-Datk-transparent-remix
+# Should be something like this:
 total 248
 -rw-r--r-- 1 billy users 20686 Mar 10 19:10 alldesktops.svg
 -rw-r--r-- 1 billy users 20313 Apr 28 13:25 close_og.svg
