@@ -13,7 +13,7 @@ Install [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstati
 yay -Sy vmware-workstation
 ```
 Then, as desired, `enable` some of the following services:
-- `vmware-networks.service` for guest network access (otherwise you will get an error `could not connect 'ethernet 0' to virtual network` and you will not be able to use *vmware-netcfg*
+- `vmware-networks.service` for guest network access (otherwise you will get an error `could not connect 'ethernet 0' to virtual network` and you will not be able to use *vmware-netcfg*)
 - `vmware-usbarbitrator.service` for connecting USB devices to guest. </br>
 
 
