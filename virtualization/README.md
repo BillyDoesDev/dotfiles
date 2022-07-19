@@ -26,7 +26,7 @@ Lastly, load the VMware modules:
 sudo modprobe -a vmw_vmci vmmon
 ```
 To list all available modules on your system, do:
-```sh
+```
 find -L /lib/modules/$(uname -r)/ | grep -i <name_of_module>
 ```
 
@@ -34,7 +34,7 @@ Launch your application with
 ```sh
 vmplayer
 ```
-> Optionally, reboot your system before launching the application to ensure all of the previously enabled services start up
+> Optionally, **reboot** your system before launching the application to ensure all of the previously enabled services start up
 
 ## Enabling UEFI BIOS
 By default, the systems you go on to install won't have a UEFI BIOS. To fix that, simply navigate to the directory of your VM and then find the file `<VM_Name>.vmx`, and add in the line `firmware = "efi"` to the file.</br>
@@ -50,8 +50,20 @@ virtualHW.version = "19"
 ```
 
 ## Setting up an Arch guest
-Install the system like you would normally. Once done, do the following:
+Install the system like you would normally. Once done, do the following (on the guest, obviously)
 ```sh
+## Install tools and drivers necessary for a seamless experience between the host and the guest OS
+sudo pacman -Sy open-vm-tools gtkmm3 gtkmm gtk2 xf86-video-vmware xf86-input-vmmouse
+## Enable the required services
+sudo systemctl enable vmtoolsd.service
+sudo systemctl enable vmware-vmblock-fuse.service
+sudo systemctl enable vmtoolsd
 ```
+> At this stage, feel free to **reboot** your system to let the changes take effect.
 
+You may add the following line
+```sh
+vmware-user
+```
+to `/etc/profile` to enable the bidirectional clipboard as soon as the guest OS boots up.</br></br>
 **Enjoy!**
