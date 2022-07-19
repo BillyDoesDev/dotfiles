@@ -8,7 +8,7 @@ After doing a lot of VM-hopping, from KVM to VirtualBox and whatnot, I finally d
 > Note: This tutorial is focussed on Arch based distros. The steps should be the same on just about anything else; however, the name of the packages might differ.
 
 ## Installation
-Install [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation). It is also necessary to install the appropriate headers package(s) for your installed kernel(s): for example [linux-headers](https://archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://archlinux.org/packages/?name=linux-lts-headers).
+Install [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation). It is also necessary to install the appropriate header package(s) for your installed kernel(s): for example [linux-headers](https://archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://archlinux.org/packages/?name=linux-lts-headers).
 ```sh
 yay -Sy vmware-workstation
 ```
@@ -34,7 +34,7 @@ Launch your application with
 ```sh
 vmplayer
 ```
-> Optionally, **reboot** your system before launching the application to ensure all of the previously enabled services start up
+> Optionally, **reboot** your system before launching the application to ensure all of the previously enabled services start up.
 
 ## Enabling UEFI BIOS
 By default, the systems you go on to install won't have a UEFI BIOS. To fix that, simply navigate to the directory of your VM and then find the file `<VM_Name>.vmx`, and add in the line `firmware = "efi"` to the file.</br>
