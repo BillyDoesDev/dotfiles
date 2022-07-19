@@ -18,6 +18,9 @@
             "panelTitle.activeForeground": "#9aa5ce",
             "panel.background": "#1a1b26",
             "panel.border": "#565f8969",
+            
+            "editorGutter.addedBackground": "#00ffbb90",
+            "editorGutter.modifiedBackground": "#ff9e64",
 
             "terminal.ansiWhite": "#b1b8da",
             "terminal.ansiGreen": "#9ece6a",
