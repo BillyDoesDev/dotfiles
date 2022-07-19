@@ -2,7 +2,7 @@
 
 After doing a lot of VM-hopping, from QEMU to VirtualBox and whatnot, I finally decided to stick to VMWare Player (not sponsored btw) to use as my go to hyperviser. Granted, its paid counterpart or even its other open source counterparts might have more features to offer, but I decided to stick to ease of use and reliability. For some reason, VirtualBox just dies when KDE is run on it, and QEMU tends to pose a lot of display scaling issues sometimes. I'm not saying that VMWare is always perfect either, but it's still more usable, in my opinion. So I put together a small guide to set stuff up as easily as possible on an Arch/Arch-based machine.
 
-### Pre-requisites
+### Prerequisites
 - Virtualization enabled in the BIOS
 
 > Note: This tutorial is focussed on Arch based distros. The steps should be the same on just about anything else; however, the name of the packages might differ.
