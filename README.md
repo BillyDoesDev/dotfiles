@@ -43,6 +43,11 @@ Pacman can be non-colored too, smh..
 edit `/etc/pacman.conf` and uncomment the line that says `Color`
 
 # sicc SDDM config
+Firstly, to enable NumLock when SDDM starts up, edit `/etc/sddm.conf` and put in these lines
+```sh
+[General]
+Numlock=on
+```
 ![image](https://user-images.githubusercontent.com/64155209/147652794-8ff09543-2c43-4dfe-81ea-28f694fd5a2c.png)
 This is possible thanks to the [Sugar candy theme](https://www.pling.com/p/1312658)</br>
 They happen to have awesome documentation as well.. here's my config file btw:
