@@ -26,7 +26,7 @@ git sparse-checkout set "sweet window decoration"
 # mv -r * ../
 # cd ..
 ```
----
+#
 ```sh
 $ ls -l ~/.local/share/aurorae/themes/Sweet-Datk-transparent-remix
 # Should be something like this:
