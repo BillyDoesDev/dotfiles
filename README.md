@@ -5,8 +5,23 @@
 ![image](https://user-images.githubusercontent.com/64155209/167783477-eaccf80d-2b74-4641-a312-d84937e58e22.png)
 
 ### haha looks sicc, right xD
-The font used for the digital clock in the top panel is [Oswald](https://fonts.google.com/specimen/Oswald)
+The font used for the digital clock in the top panel is [Oswald](https://fonts.google.com/specimen/Oswald).</br>
+The dock in use is [latte-dock](https://archlinux.org/packages/community/x86_64/latte-dock/).
+> The current community version as of writing this (0.10.8-1) is broken, So I'm using [latte-dock-git](https://aur.archlinux.org/packages/latte-dock-git) instead.
 
+#
+Check dependencies of a particular package on arch
+```sh
+pactree -U package_name
+```
+> `pactree` is part of the [pacman-contrib](https://archlinux.org/packages/community/x86_64/pacman-contrib/) package.
+
+#
+`repo/package: depends on` - check top of the dependency tree.. i.e., these packages will be installed before your specified package
+```sh
+ecpac -S '%r/%n: %D' package_name
+```
+> [expac](https://archlinux.org/packages/community/x86_64/expac/) is a pacman database extraction utility.
 
 #
 The gimp thingy is at
