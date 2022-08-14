@@ -16,8 +16,7 @@ workspace behaviour > desktop effects > blur (both light & noise at 50%); dim sc
 workspace behaviour > disable everything except the top left corner one.. and keep that at default</br>
 search > krunner > position at center</br>
 
-> shit to do with window colors, etc (idk if it's really necessary)
-https://youtu.be/zfOe1Kfb4WE?t=317
+> See [this](https://youtu.be/zfOe1Kfb4WE?t=317) if you wanna mess around with the compositor settings. (I keep mine at default)
 
 ## Theming
 ```bash
