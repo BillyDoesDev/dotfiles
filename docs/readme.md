@@ -1,17 +1,18 @@
 ## Fix mirrors
 ```bash
+# This mostly just applies to Manjaro users only
 sudo pacman-mirrors --country all --api --protocols all && sudo pacman -Syyu
 ```
 
 ## Initial setup:
 
-Widgets:
+Widgets (optional):
 - latte separater
 - latte spacer
 - event calender
 
-window management > window behaviour > advanced > window placement: centered</br>
-window management > KWin scripts > get new scripts > *install force blur by esjeon*</br>
+window management > window behaviour > advanced > window placement: Cascaded</br>
+window management > KWin scripts > get new scripts > *install `Force Blur` by esjeon and `Shake` by zzag*</br>
 workspace behaviour > desktop effects > blur (both light & noise at 50%); dim screen for admin mode; scale (under open/close animation)</br>
 workspace behaviour > disable everything except the top left corner one.. and keep that at default</br>
 search > krunner > position at center</br>
@@ -29,6 +30,7 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 ```
 
 ## Theme manager
+###### This is completely optional
 ```bash
 sudo pacman -S kvantum
 ```
@@ -41,10 +43,12 @@ open kvantum > change and edit theme > select orchis dark
 
  install the Robotto font.. and use it as global font</br>
  use aritim dark as the konsole profile</br>
-> I use this theme called sweet KDE btw
+> ...or just use a custom one like [this](https://github.com/BillyDoesDev/dotfiles/blob/main/Tokyo%20Night.colorscheme)</br>
+> simply paste in the file at `~/.local/share/konsole/`, and then select it from the appropriate menu
 
 **Also**
 ```bash
+# This is to add support for Japanese and other Asian fonts
 sudo pacman -S noto-fonts-emoji
 sudo pacman -S noto-fonts-cjk
 ```
