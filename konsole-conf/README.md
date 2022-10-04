@@ -1,0 +1,2 @@
+- Place \*.profile and \*.colorscheme at `~/.local/share/konsole`
+- Place `konsolerc` at `~/.config`
