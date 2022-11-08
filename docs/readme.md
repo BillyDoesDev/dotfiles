@@ -29,6 +29,18 @@ cd Orchis-theme;sudo sh ./install.sh;cd ..
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 ```
 
+## Cursor theme acting weird when hovering over links?
+edit `/usr/share/icons/default/index.theme` and replace the `Inherits` parameter with the cursor theme of your choice.
+```ini
+[Icon Theme]
+#Inherits=Adwaita
+Inherits=Breeze_Snow
+```
+In order to get a list of installed cursor themes, run:
+```sh
+find /usr/share/icons ~/.local/share/icons ~/.icons -type d -name "cursors"
+```
+
 ## Theme manager
 ###### This is completely optional
 ```bash
