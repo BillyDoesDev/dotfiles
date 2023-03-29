@@ -30,6 +30,13 @@ $HOME/.config/GIMP/2.10/
 ```
 
 #
+Want multiple audio outputs on Arch? Install [paprefs](https://archlinux.org/packages/extra/x86_64/paprefs/).
+```sh
+sudo pacman -Sy paprefs
+```
+
+
+#
 The zsh plugings are sicc and all.. clone them via:</br>
 ```sh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
