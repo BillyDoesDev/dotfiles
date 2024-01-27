@@ -53,6 +53,18 @@ git clone https://github.com/psifidotos/applet-window-appmenu
 ```
 
 #
+Modern clock KDE widget drop-shadow fix</br>
+`~/.local/share/plasma/plasmoids/com.github.prayag2.modernclock/contents/ui/main.qml`
+```xml
+Item {
+    id: root
+    
+    
+    // setting background as transparent with a drop shadow
+    Plasmoid.backgroundHints: PlasmaCore.Types.ConfigurableBackground
+```
+
+#
 Cool stuff: 
 - [ASCII Pokemon Sprites](https://gitlab.com/phoneybadger/pokemon-colorscripts)
 - [API to get exact scene from an anime screenshot](https://soruly.github.io/trace.moe-api/)
@@ -72,14 +84,15 @@ Numlock=on
 ```
 ![image](https://user-images.githubusercontent.com/64155209/147652794-8ff09543-2c43-4dfe-81ea-28f694fd5a2c.png)
 This is possible thanks to the [Sugar candy theme](https://www.pling.com/p/1312658)</br>
-They happen to have awesome documentation as well.. here's my config file btw:
+They happen to have awesome documentation as well.. here's my config file btw:</br>
+`/usr/share/sddm/themes/sugar-candy/theme.conf.user`
 ```properties
 [General]
 type=image
 
-Background="Backgrounds/astronaut-right.jpg"
+Background="Backgrounds/1780.bmp"
 
-DimBackgroundImage="0.2"
+DimBackgroundImage="0"
 ## Double between 0 and 1 used for the alpha channel of a darkening overlay. Use to darken your background image on the fly.
 
 ScreenWidth="1920"
@@ -92,13 +105,18 @@ FullBlur="false"
 PartialBlur="true"
 ## Enable or disable the blur effect; if HaveFormBackground is set to true then PartialBlur will trigger the BackgroundColor of the form element to be partially transparent and blend with the blur.
 
-BlurRadius="2"
+BlurRadius="0"
 ## Set the strength of the blur effect. Anything above 100 is pretty strong and might slow down the rendering time. 0 is like setting false for any blur.
 
-AccentColor="#334d55"
+## Defaults to white - this is the text color
+MainColor="#ffe3e7"
+
+AccentColor="#fd919e"
 ## Used for elements in focus/hover/pressed. Should be contrasting to the background and the MainColor to achieve the best effect.
 
-# Font="Orbitron"
+#OverrideLoginButtonTextColor="#192532"
+
+Font="Minecraft"
 ## If you want to choose a custom font it will have to be available to the X root user. See https://wiki.archlinux.org/index.php/fonts#Manual_installation
 
 
