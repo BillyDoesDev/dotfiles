@@ -1,5 +1,5 @@
 [Appearance]
-ColorScheme=Tokyo%20Night
+ColorScheme=TokyoNight
 TabColor=128,128,255
 
 [Cursor Options]
