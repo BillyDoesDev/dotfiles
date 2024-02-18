@@ -46,6 +46,29 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
 ```
 
+
+#
+MPV config</br>
+```shell
+nano ~/.config/mpv/input.conf
+```
+```conf
+Ctrl+Alt+RIGHT cycle_values video-rotate 90 180 270 0
+```
+
+#
+[Get ProtonVPN on Arch](https://web.archive.org/web/20230811144628/https://protonvpn.com/support/official-linux-client-arch/)</br>
+Do note that [Proton officially no longer supports a gui for Arch](https://www.reddit.com/r/ProtonVPN/comments/17clwac/comment/k5r1qdg/), so you might as well refer to [this guide](https://wiki.archlinux.org/title/ProtonVPN) instead, where the [proton-vpn-gtk-app](https://aur.archlinux.org/packages/proton-vpn-gtk-app) is used...
+```shell
+yay -Sy protonvpn
+```
+import the necessary PGP Keys, get your tray icons stuff working...
+```shell
+sudo pacman -Syu libappindicator-gtk3 gnome-shell-extension-appindicator
+```
+and reboot!
+
+
 #
 Global Menu widget (default KDE one sucks)
 ```sh
