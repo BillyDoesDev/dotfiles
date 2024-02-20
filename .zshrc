@@ -72,6 +72,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias owoify="sed 's/r/w/g;s/l/w/g;s/na/nya/g;s/ne/nye/g;s/ni/nyi/g;s/no/nyo/g;s/nu/nyu/g;s/he/hye/g'"
 alias pacclean='sudo pacman -Scc && sudo pacman -Qdtq | sudo pacman -Rs -'
+alias yt-dlp='yt-dlp --embed-metadata'
+
 
 # Theming section  
 autoload -U compinit colors zcalc
