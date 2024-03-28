@@ -66,14 +66,15 @@ alias df='df -h'                                                # Human-readable
 alias free='free -m'                                            # Show sizes in MB
 alias gitu='git add . && git commit && git push'
 alias ls='ls --color'
-alias ll='ls -alF'
+alias ll='ls -alhF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias owoify="sed 's/r/w/g;s/l/w/g;s/na/nya/g;s/ne/nye/g;s/ni/nyi/g;s/no/nyo/g;s/nu/nyu/g;s/he/hye/g'"
 alias pacclean='sudo pacman -Scc && sudo pacman -Qdtq | sudo pacman -Rs -'
-alias yt-dlp='yt-dlp --embed-metadata'
-
+alias yt-dlp='yt-dlp --trim-filenames 80 --embed-metadata'
+## yt-dlp  -o "%(title).200s.%(ext)s" URL
+alias vaudio='pactl load-module module-null-sink sink_name=vsink && pactl load-module module-loopback sink=vsink'
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -137,9 +138,13 @@ function compound(){
     fi
 }
 
-#source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh                       # loads syntax highlighting plugin
-#neofetch --color_blocks off --disable model shell resolution de wm wm_theme theme icons term term_font cpu gpu --ascii_distro arch_small
+source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh                       # loads syntax highlighting plugin
+neofetch --color_blocks off --disable model shell resolution de wm wm_theme theme icons term term_font gpu --ascii_distro arch_small
 
 # Load spaceship zsh prompt
 #autoload -U promptinit; promptinit
 #prompt spaceship
+source "$HOME/.config/zsh/spaceship-prompt/spaceship.zsh"
+source "$HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+#export QT_STYLE_OVERRIDE=kvantum
+alias peaclock="peaclock --config-dir ~/.config/peaclock"
