@@ -50,10 +50,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git
 #
 MPV config</br>
 ```shell
-nano ~/.config/mpv/input.conf
+~/.config/mpv/input.conf #linux
+%appdata%\mpv\input.conf #winblows
 ```
 ```conf
 Ctrl+Alt+RIGHT cycle_values video-rotate 90 180 270 0
+Ctrl+Alt+LEFT cycle_values video-rotate 270 180 90 0
+Ctrl+m af toggle "lavfi=[pan=1c|c0=0.5*c0+0.5*c1]" ; show-text "Audio mix Mono Toggled."
 ```
 
 #
