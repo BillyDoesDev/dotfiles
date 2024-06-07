@@ -17,6 +17,13 @@ sh install.sh --tweaks nord darker rimless colorful float
 In order to follow along with this config, you'll have to abuse the generated css file at `~/.themes/Graphite-Dark-nord/gnome-shell/gnome-shell.css`</br>
 You'll also need a few specific assets, which are provied inside this directory.
 
+You can also patch up the gdm install script to throw in your own background. After cloning, 
+```
+mv ./Graphite-gtk-theme/src/assets/gnome-shell/background-Dark.png ./Graphite-gtk-theme/src/assets/gnome-shell/background-Dark.bak.png
+cp ./your/image.png ./Graphite-gtk-theme/src/assets/gnome-shell/background-Dark.png
+```
+Next up, install `gdm-settings` to further customise gdm. Also do not forget to install `gnome-tweaks` and `gnome-shell-extensions`.
+
 ## The Cursor
 ```sh
 yay -Sy bibata-cursor-theme-bin
@@ -57,5 +64,6 @@ yea, get that from this directory later on
   sudo pacman -Sy ffmpegthumbnailer gst-libav gst-plugins-ugly
   rm -rf ~/.cache/thumbnails/fail
   ```
+- https://wiki.archlinux.org/title/GNOME#Configuration
 
 
