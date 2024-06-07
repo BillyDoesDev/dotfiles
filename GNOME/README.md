@@ -29,8 +29,9 @@ Next up, install `gdm-settings` to further customise gdm. Also do not forget to 
 yay -Sy bibata-cursor-theme-bin
 ```
 > [!TIP]
-> icons and cursors go to `~/.local/share/icons`</br>
-> shell and application themes go to `~/.themes`
+> - icons and cursors go to `~/.local/share/icons`
+> - shell and application themes go to `~/.themes`
+> - fonts go to `~/.local/share/fonts`, and you can list them via `fc-list`
 
 
 ## mpv
@@ -65,5 +66,7 @@ yea, get that from this directory later on
   rm -rf ~/.cache/thumbnails/fail
   ```
 - https://wiki.archlinux.org/title/GNOME#Configuration
+- Got messed up/straight up missing application menus?</br>
+  Head over to `~/.config/gtk-3.0/settings.ini`, and you might wanna consider setting `gtk-shell-shows-menubar=0`
 
 
