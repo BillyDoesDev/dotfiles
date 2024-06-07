@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://extensions.gnome.org/local/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="google-site-verification" content="FqL97fLHaUM8zWWqkc4ZrvY-u9MikPkV0QshIzc-Bp8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/gphhapmejobijbbhgpjhcjognlahblep">
+    <link rel="stylesheet" href="./Installed Extensions - GNOME Shell Extensions_files/bootstrap.95099ae0594f.css">
+    <link rel="stylesheet" href="./Installed Extensions - GNOME Shell Extensions_files/sweettooth.f5f5be2678d6.css">
+    <link rel="stylesheet" href="./Installed Extensions - GNOME Shell Extensions_files/style.1e3ca0b3b254.css">
+    <link rel="shortcut icon" href="https://extensions.gnome.org/static/images/favicon.b73b0c0e30d2.png">
+    <link rel="alternate" type="application/rss+xml" href="https://extensions.gnome.org/rss/" title="Latest extensions in GNOME Shell Extensions">
+    <title>Installed Extensions - GNOME Shell Extensions</title>
+    <script>
+        
+        var require = {
+            baseUrl: '/static/js/',
+            paths: {"versions/5/main": "versions/5/main.25e1e5df61e6", "versions/6/main": "versions/6/main.a3e86eae7fbe", "versions/common/common": "versions/common/common.ff92e6455d9e", "versions/dummy/main": "versions/dummy/main.4941c990a963", "test/extensions": "test/extensions.6b2f99c92ac5", "test/paginatorUtils": "test/paginatorUtils.9ad984331de8", "test/qunit": "test/qunit.27be583f809e", "test/tests-main": "test/tests-main.a275f5926e96", "bootstrap.min": "bootstrap.min.79b5346433d3", "browser_extension": "browser_extension.f229b9bb12c6", "dbus": "dbus.ed89cc8ffdc0", "diff": "diff.69c433b044b4", "extensionUtils": "extensionUtils.40107e31af37", "extensions": "extensions.6c8bddc6e67e", "fsui": "fsui.6885b8172502", "hashParamUtils": "hashParamUtils.494276a6fa31", "jquery.colorbox": "jquery.colorbox.2769d3c25dc8", "jquery.hashchange": "jquery.hashchange.0f0a1c9a6db9", "jquery.jeditable": "jquery.jeditable.f0b2d2ec92fb", "jquery": "jquery.a09e13ee94d5", "jquery.raty": "jquery.raty.20fa4a124f73", "jquery.timeago": "jquery.timeago.564fbe3919cb", "js.cookie": "js.cookie.c0cf92b96144", "main": "main.a7de5590f7f5", "messages": "messages.54220df60072", "modal": "modal.f7e2e939663f", "mustache": "mustache.ff5c30d0b97c", "paginator": "paginator.5c418aec726e", "paginatorUtils": "paginatorUtils.9405c6611048", "require": "require.84b7823d3c10", "review-main": "review-main.350ece371eaf", "review": "review.0db55ba33665", "settings": "settings.639bd771885a", "staticfiles": "staticfiles.b4e715794bfa", "switch": "switch.7e10600709da", "template": "template.5c74d6efe49c", "text": "text.2a17da82e446", "uploader": "uploader.6b3cc74aac40", "voca": "voca.d48774c600d3"},
+            waitSeconds: 30 // It's fails sometimes with default 7 secs
+        };
+
+        var django_static_images = {"images/colorbox/border.png": "images/colorbox/border.b593eef87767.png", "images/colorbox/controls.png": "images/colorbox/controls.05ad6ec2cbc1.png", "images/colorbox/loading.gif": "images/colorbox/loading.f1d7268ba36b.gif", "images/colorbox/loading_background.png": "images/colorbox/loading_background.7649e6a7c32b.png", "images/colorbox/overlay.png": "images/colorbox/overlay.8918e1f6fbaa.png", "images/footer_arts/applications.png": "images/footer_arts/applications.495cdbfebf38.png", "images/action_button-bg.png": "images/action_button-bg.a7fa2c3a25ee.png", "images/avatar-default.svg": "images/avatar-default.7d57ce883ed0.svg", "images/configure-extension.png": "images/configure-extension.2792420d2ac7.png", "images/edit.svg": "images/edit.37d1f0720c6d.svg", "images/error.png": "images/error.42b2b2eadda9.png", "images/face-angry.png": "images/face-angry.9fce32af043a.png", "images/face-smile.png": "images/face-smile.40db0ca77b2d.png", "images/favicon.png": "images/favicon.b73b0c0e30d2.png", "images/foot.png": "images/foot.91c52c085458.png", "images/globaldomain-popup-arrow.png": "images/globaldomain-popup-arrow.6aeb75e2f843.png", "images/globaldomain-user-arrow.png": "images/globaldomain-user-arrow.e0d59dbd0115.png", "images/globalnav-arrow.png": "images/globalnav-arrow.f4c3fbe9b7e6.png", "images/gnome-extensions.svg": "images/gnome-extensions.2635f103c955.svg", "images/gnome-logo-extensions.png": "images/gnome-logo-extensions.88918c1c8dbb.png", "images/grass.png": "images/grass.3a2d2d2f8f0f.png", "images/hr-shadow.png": "images/hr-shadow.4af8804dbd53.png", "images/html-bg.png": "images/html-bg.018e737b3aae.png", "images/info.png": "images/info.b4acc242db50.png", "images/plugin-unknown.png": "images/plugin-unknown.c5f2c45659af.png", "images/plugin.png": "images/plugin.68be48572323.png", "images/plugin.svg": "images/plugin.ec65cac5062a.svg", "images/search-clear-icon.png": "images/search-clear-icon.487abc5d1182.png", "images/search.svg": "images/search.ff22febd6143.svg", "images/spinner.gif": "images/spinner.7b9776076d5f.gif", "images/top_bar-bg.png": "images/top_bar-bg.094e5c1c682e.png", "images/top_bar-item-bg.png": "images/top_bar-item-bg.581e8d84f17b.png", "images/top_bar-item-hover-bg.png": "images/top_bar-item-hover-bg.d9047fc1e101.png", "images/uninstall-extension.png": "images/uninstall-extension.7250945dc51c.png", "images/upgrade.png": "images/upgrade.f9e4a20cde19.png", "images/warning.png": "images/warning.d6749682c04d.png"};
+    </script>
+    <script src="./Installed Extensions - GNOME Shell Extensions_files/saved_resource"></script>
+    <script src="./Installed Extensions - GNOME Shell Extensions_files/browser_extension.f229b9bb12c6.js"></script>
+    <script src="./Installed Extensions - GNOME Shell Extensions_files/require.84b7823d3c10.js"></script>
+    <script src="./Installed Extensions - GNOME Shell Extensions_files/jquery.a09e13ee94d5.js"></script>
+    <script>
+        jQuery(function($) {
+            require(['main'], function(){});
+        });
+    </script>
+     
+  <script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="main" src="./Installed Extensions - GNOME Shell Extensions_files/main.a7de5590f7f5.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="messages" src="./Installed Extensions - GNOME Shell Extensions_files/messages.54220df60072.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="modal" src="./Installed Extensions - GNOME Shell Extensions_files/modal.f7e2e939663f.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="hashParamUtils" src="./Installed Extensions - GNOME Shell Extensions_files/hashParamUtils.494276a6fa31.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="template" src="./Installed Extensions - GNOME Shell Extensions_files/template.5c74d6efe49c.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="staticfiles" src="./Installed Extensions - GNOME Shell Extensions_files/staticfiles.b4e715794bfa.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="js.cookie" src="./Installed Extensions - GNOME Shell Extensions_files/js.cookie.c0cf92b96144.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="extensions" src="./Installed Extensions - GNOME Shell Extensions_files/extensions.6c8bddc6e67e.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="uploader" src="./Installed Extensions - GNOME Shell Extensions_files/uploader.6b3cc74aac40.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="fsui" src="./Installed Extensions - GNOME Shell Extensions_files/fsui.6885b8172502.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="settings" src="./Installed Extensions - GNOME Shell Extensions_files/settings.639bd771885a.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="jquery.jeditable" src="./Installed Extensions - GNOME Shell Extensions_files/jquery.jeditable.f0b2d2ec92fb.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="jquery.timeago" src="./Installed Extensions - GNOME Shell Extensions_files/jquery.timeago.564fbe3919cb.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="jquery.raty" src="./Installed Extensions - GNOME Shell Extensions_files/jquery.raty.20fa4a124f73.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="jquery.colorbox" src="./Installed Extensions - GNOME Shell Extensions_files/jquery.colorbox.2769d3c25dc8.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="mustache" src="./Installed Extensions - GNOME Shell Extensions_files/mustache.ff5c30d0b97c.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="dbus" src="./Installed Extensions - GNOME Shell Extensions_files/dbus.ed89cc8ffdc0.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="extensionUtils" src="./Installed Extensions - GNOME Shell Extensions_files/extensionUtils.40107e31af37.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="voca" src="./Installed Extensions - GNOME Shell Extensions_files/voca.d48774c600d3.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="paginator" src="./Installed Extensions - GNOME Shell Extensions_files/paginator.5c418aec726e.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="switch" src="./Installed Extensions - GNOME Shell Extensions_files/switch.7e10600709da.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="text" src="./Installed Extensions - GNOME Shell Extensions_files/text.2a17da82e446.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="paginatorUtils" src="./Installed Extensions - GNOME Shell Extensions_files/paginatorUtils.9405c6611048.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="jquery.hashchange" src="./Installed Extensions - GNOME Shell Extensions_files/jquery.hashchange.0f0a1c9a6db9.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="versions/6/main" src="./Installed Extensions - GNOME Shell Extensions_files/main.a3e86eae7fbe.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="versions/common/common" src="./Installed Extensions - GNOME Shell Extensions_files/common.ff92e6455d9e.js"></script></head>
+  <body class="gnome-body">
+    <header class="gnome-header">
+        <div class="navbar navbar-fixed-top navbar-default affix-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar top-bar"></span>
+                        <span class="icon-bar middle-bar"></span>
+                        <span class="icon-bar bottom-bar"></span>
+                    </button>
+                    <a class="gnome-navbar-brand" title="GNOME Shell Extensions" href="https://extensions.gnome.org/"><img src="./Installed Extensions - GNOME Shell Extensions_files/gnome-extensions.2635f103c955.svg" alt="GNOME Shell Extensions"></a>
+                    <ul class="nav navbar-nav icons visible-xs">
+                        
+                        <li class="dropdown">
+                        
+                            <a href="https://extensions.gnome.org/local/#userDropdownMenu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="./Installed Extensions - GNOME Shell Extensions_files/avatar-default.7d57ce883ed0.svg" alt="GNOME Shell Extensions"></a>
+                        
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav navbar-right no-padding">
+                    <li id="userDropdownMenu" class="dropdown">
+                    <a href="https://extensions.gnome.org/accounts/login/" class="dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log in <span class="caret"></span></a>
+                        <ul class="dropdown-menu login_popup_form">
+                            <li>
+                                
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <form action="https://extensions.gnome.org/accounts/login/" method="POST" class="form">
+          <input type="hidden" name="csrfmiddlewaretoken" value="SNMhYQoPRou290pE4oae9CLfW88xjD7dkgtMAfDmZ4Y5A7by5zF9fUYypxta01m9">
+          <div class="form-group"><input type="text" name="username" autofocus="autofocus" autocapitalize="none" autocomplete="username" maxlength="150" placeholder="Username or email" class="form-control" required="" id="id_username"></div> 
+<div class="form-group"><input type="password" name="password" autocomplete="current-password" placeholder="Password" class="form-control" required="" id="id_password"></div> 
+            <div class="form-group">
+                <input type="hidden" name="next" class="form-control" value="/local/">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </div>
+            <div class="form-group">
+                <a href="https://extensions.gnome.org/accounts/password/reset/">Forgot your password?</a>
+            </div>
+            <li class="divider"></li>
+            <p>Don't have an account?</p>
+            <div class="form-group">
+                <a href="https://extensions.gnome.org/accounts/register/" class="btn btn-success btn-block no-decoration">Register</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div id="navbar-wrapper" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                    
+                        
+                            <li class=""><a href="https://extensions.gnome.org/">Extensions</a></li>
+                        
+                            <li class=""><a href="https://extensions.gnome.org/upload/">Add yours</a></li>
+                        
+                            <li class="active"><a href="https://extensions.gnome.org/local/">Installed extensions</a></li>
+                        
+                            <li class=""><a href="https://extensions.gnome.org/about/">About</a></li>
+                        
+                    
+                        <li><a target="_blank" href="https://gjs.guide/extensions">Developers Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="clearfix"></div>
+
+    <div id="container" class="container gnome-content">
+        <div class="col-sm-12">
+            <div id="message_container">
+                
+
+                
+                
+            </div>
+
+            
+            
+
+            
+<h2>Shell settings</h2>
+<div id="shell_settings"><div class="setting" id="setting-disable-user-extensions">
+	<h3 class="setting-name">Disable all extensions</h3>
+	<div class="controls">
+		<div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+	</div>
+	<div style="clear: both"></div>
+	<p class="description">Disable all extensions regardless per-extension enable setting.</p>
+</div><div class="setting" id="setting-disable-extension-version-validation">
+	<h3 class="setting-name">Disable version validation</h3>
+	<div class="controls">
+		<div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+	</div>
+	<div style="clear: both"></div>
+	<p class="description">Allow to load extensions that do not claims to support running Shell version. Default to enabled for recent Shell versions.</p>
+</div></div>
+
+<h2>Installed Extensions</h2>
+<div id="local_extensions">
+<div class="extension installed configurable" data-uuid="appindicatorsupport@rgcjonas.gmail.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/615/appindicator-support/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/plugin.png" class="icon">AppIndicator and KStatusNotifierItem Support</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/3v1n0">3v1n0</a></span>
+<div class="controls">
+  <div class="_gnome-switch activated" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: 38px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Adds AppIndicator, KStatusNotifierItem and legacy Tray icons support to the Shell</p>
+</div><div class="extension installed system upgradable" data-uuid="apps-menu@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/6/applications-menu/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_6.png" class="icon">Apps Menu</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Add a category-based menu for apps.</p>
+</div><div class="extension installed configurable" data-uuid="arcmenu@arcmenu.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/3628/arcmenu/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_3628_57rtk3m.png" class="icon">ArcMenu</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/andrew.zaech">andrew_z</a></span>
+<div class="controls">
+  <div class="_gnome-switch activated" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: 38px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Application menu for GNOME Shell</p>
+</div><div class="extension installed system upgradable configurable" data-uuid="auto-move-windows@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/16/auto-move-windows/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/plugin.png" class="icon">Auto Move Windows</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Move applications to specific workspaces when they create windows.</p>
+</div><div class="extension installed system configurable" data-uuid="blur-my-shell@aunetx">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/3193/blur-my-shell/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_3193_QedHJZY.png" class="icon">Blur my Shell</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/aunetx">aunetx</a></span>
+<div class="controls">
+  <div class="_gnome-switch activated" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: 38px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Adds a blur look to different parts of the GNOME Shell, including the top panel, dash and overview.</p>
+</div><div class="extension installed configurable" data-uuid="clipboard-history@alexsaveau.dev">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/4839/clipboard-history/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/plugin.png" class="icon">Clipboard History</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/SUPERCILEX">SUPERCILEX</a></span>
+<div class="controls">
+  <div class="_gnome-switch activated" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: 38px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Gnome Clipboard History is a clipboard manager GNOME extension that saves items you've copied into an easily accessible, searchable history panel.</p>
+</div><div class="extension installed configurable" data-uuid="color-picker@tuberry">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/3396/color-picker/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_3396_eLWgtnw.png" class="icon">Color Picker</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/grroot">grroot</a></span>
+<div class="controls">
+  <div class="_gnome-switch activated" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: 38px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Simple color picker for GNOME Shell</p>
+</div><div class="extension installed configurable" data-uuid="custom-accent-colors@demiskp">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/5547/custom-accent-colors/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/plugin.png" class="icon">Custom Accent Colors</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/demiskp">demiskp</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">A GNOME Shell Extension that provides 7 Custom Accent Colors. The selected Accent Color can be applied to GTK4/GTK3 apps and the Gnome Shell.</p>
+</div><div class="extension installed configurable" data-uuid="dash-to-dock@micxgx.gmail.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/307/dash-to-dock/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_307_2.png" class="icon">Dash to Dock</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/michele_g">michele_g</a></span>
+<div class="controls">
+  <div class="_gnome-switch activated" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: 38px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">A dock for the Gnome Shell. This extension moves the dash out of the overview transforming it in a dock for an easier launching of applications and a faster switching between windows and desktops. Side and bottom placement options are available.</p>
+</div><div class="extension installed system upgradable" data-uuid="launch-new-instance@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/600/launch-new-instance/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/plugin.png" class="icon">Launch new instance</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Always launch a new instance when clicking in the dash or the application view.</p>
+</div><div class="extension installed system upgradable" data-uuid="light-style@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/6198/light-style/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/plugin.png" class="icon">Light Style</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Switch default to light style</p>
+</div><div class="extension installed system upgradable" data-uuid="native-window-placement@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/18/native-window-placement/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_18.png" class="icon">Native Window Placement</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Arrange windows in overview in a more compact way.</p>
+</div><div class="extension installed system upgradable" data-uuid="places-menu@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/8/places-status-indicator/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_8.png" class="icon">Places Status Indicator</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Add a menu for quickly navigating places in the system.</p>
+</div><div class="extension installed system upgradable" data-uuid="drive-menu@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/7/removable-drive-menu/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_7.png" class="icon">Removable Drive Menu</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">A status menu for accessing and unmounting removable devices.</p>
+</div><div class="extension installed system upgradable" data-uuid="screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/881/screenshot-window-sizer/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_881.png" class="icon">Screenshot Window Sizer</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Resize windows for GNOME Software screenshots</p>
+</div><div class="extension installed system upgradable" data-uuid="system-monitor@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/6807/system-monitor/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/plugin.png" class="icon">System Monitor</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch activated" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: 38px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Monitor system from the top bar</p>
+</div><div class="extension installed system upgradable configurable" data-uuid="user-theme@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/19/user-themes/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/plugin.png" class="icon">User Themes</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch activated" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: 38px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Load shell themes from user directory.</p>
+</div><div class="extension installed system upgradable configurable" data-uuid="window-list@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/602/window-list/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/plugin.png" class="icon">Window List</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Display a window list at the bottom of the screen.</p>
+</div><div class="extension installed system upgradable" data-uuid="windowsNavigator@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/10/windownavigator/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_10.png" class="icon">windowNavigator</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Allow keyboard selection of windows and workspaces in overlay mode. &lt;Ctrl&gt;number selects a workspace, and &lt;Alt&gt;number selects a window.</p>
+</div><div class="extension installed system upgradable configurable" data-uuid="workspace-indicator@gnome-shell-extensions.gcampax.github.com">
+<h3 class="extension-name">
+    <a href="https://extensions.gnome.org/extension/21/workspace-indicator/" class="title-link"><img src="./Installed Extensions - GNOME Shell Extensions_files/icon_21.png" class="icon">Workspace Indicator</a>
+</h3>
+  <span class="author">by <a href="https://extensions.gnome.org/accounts/profile/fmuellner">fmuellner</a></span>
+<div class="controls">
+  <div class="_gnome-switch" unselectable="on" style="user-select: none;"><span class="on">ON</span><span class="off">OFF</span><span class="custom-content"></span><span class="slider not-dragging" style="left: -2px;"><span class="handle"></span></span></div>
+  <div class="extra-buttons">
+    <div class="upgrade-button" title="Upgrade this extension"></div>
+    <div class="configure-button" title="Configure this extension"></div>
+    <div class="uninstall-button" title="Uninstall this extension"></div>
+  </div>
+</div>
+<div style="clear: both"></div>
+<div class="system-extension" title="System extension should be uninstalled using package manager. See «About» page for more details.">System extension</div>
+<p class="description">Put an indicator on the panel signaling in which workspace you are, and give you the possibility of switching to another one.</p>
+</div></div>
+
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="links col-xs-12 col-sm-9">
+                      <div class="menu-footer-container">
+    <ul id="menu-footer" class="menu">
+        <li id="menu-item-1048" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1048"><a href="https://www.gnome.org/">The GNOME Project</a>
+            <ul class="sub-menu">
+                <li><a href="https://www.gnome.org/about/">About Us</a></li>
+                <li><a href="https://welcome.gnome.org/">Get Involved</a></li>
+                <li><a href="https://www.gnome.org/support-gnome/">Support GNOME</a></li>
+                <li><a href="https://shop.gnome.org/">GNOME Shop</a></li>
+                <li><a href="https://foundation.gnome.org/contact-us/">Contact Us</a></li>
+                <li><a href="https://www.gnome.org/privacy/">Privacy</a></li>
+                <li><a href="https://foundation.gnome.org/">The GNOME Foundation</a></li>
+            </ul>
+        </li>
+        <li id="menu-item-1047" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1047"><a href="https://extensions.gnome.org/local/#" onclick="return false;">Resources</a>
+            <ul class="sub-menu">
+                <li><a href="https://developer.gnome.org/">Developer Center</a></li>
+                <li><a href="https://help.gnome.org/">Documentation</a></li>
+                <li><a href="https://wiki.gnome.org/">Wiki</a></li>
+                <li><a href="https://mail.gnome.org/mailman/listinfo">Mailing Lists</a></li>
+                <li><a href="https://wiki.gnome.org/Community/GettingInTouch/IRC">IRC Channels</a></li>
+                <li><a href="https://gitlab.gnome.org/">Bug Tracker</a></li>
+                <li><a href="https://gitlab.gnome.org/">Development Code</a></li>
+            </ul>
+        </li>
+        <li id="menu-item-1046" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1046"><a href="https://www.gnome.org/news">News</a>
+            <ul class="sub-menu">
+                <li><a href="https://thisweek.gnome.org/">This Week in GNOME</a></li>
+                <li><a href="https://www.gnome.org/start/stable">Latest Release</a></li>
+                <li><a href="https://planet.gnome.org/">Planet GNOME</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footnotes -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="footnotes" class="col-sm-9">
+                        Copyright © 2005‒2024 <strong class="gnome_logo">The GNOME Project</strong><br>
+                        <small>Free to share and remix: <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons CC-BY</a>. Optimised for standards. Hosted by <a href="https://www.redhat.com/">Red Hat</a>. Powered by <a href="https://www.djangoproject.com/">Django</a> and <a href="https://gitlab.gnome.org/Infrastructure/extensions-web">SweetTooth</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <script src="./Installed Extensions - GNOME Shell Extensions_files/bootstrap.min.79b5346433d3.js"></script>
+  
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>
