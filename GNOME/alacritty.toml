@@ -1,0 +1,36 @@
+import = [
+  # uncomment the flavour you want below:
+  # "~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+live_config_reload = true
+
+[window]
+dimensions = { columns = 107, lines = 28 }
+padding = { x = 12, y = 14 }
+decorations = "None"
+
+[font]
+normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+size = 12.0
+
+[colors.primary]
+background = "#15161e"
+
+[selection]
+save_to_clipboard = true
+
+[[hints.enabled]]
+command = "" # On Linux/BSD
+action = "Copy"
+# command = "open" # On macOS
+# command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
