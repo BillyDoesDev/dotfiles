@@ -78,8 +78,11 @@ curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritt
 ```
 <hr>
 
-`~/.config/tmux/tmux.conf` </br>
-yea, get that from this directory later on
+Install `tpm`
+```sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+And then, edit the `~/.config/tmux/tmux.conf` file accordingly.</br>
 
 > [!CAUTION]
 > Be sure to install your tmux plugins for changes to take place. (it's `prefix` + `I`)
