@@ -1,8 +1,8 @@
 ## sup y'all!
 After years of using KDE Plasma, and finally getting sick of the new updates bricking stuff up, making designs inconsistent, here, I'll put the stuff for my latest gnome config!!
 
+![image](https://github.com/BillyDoesDev/dotfiles/assets/64155209/0caa0533-1ddb-470f-b1fd-9cdd67907109)
 
-<img src="https://cdn.discordapp.com/attachments/1246431376769548349/1247625897410822164/image.png?ex=66640169&is=6662afe9&hm=5ebb64452cfeae1aa58a3eb2c1854f6a84e8681a4bd17ca9d4e02f74418cbfcf&" />
 
 ## The Essentials
 
