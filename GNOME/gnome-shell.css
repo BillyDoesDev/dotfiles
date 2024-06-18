@@ -2410,7 +2410,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .switcher-list .item-box:selected {
-  /* background-color: #dbdee5; */
+  background-color: #2c2e3b;
   border: 2px solid #dbdee5;
   color: rgba(0, 0, 0, 0.87);
 }
