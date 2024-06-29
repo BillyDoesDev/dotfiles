@@ -98,5 +98,12 @@ And then, edit the `~/.config/tmux/tmux.conf` file accordingly.</br>
 - https://wiki.archlinux.org/title/GNOME#Configuration
 - Got messed up/straight up missing application menus?</br>
   Head over to `~/.config/gtk-3.0/settings.ini`, and you might wanna consider setting `gtk-shell-shows-menubar=0`
+- New mount points/file paths open in vscode by default, and not nautilus? Try adding the following to your `~.config/mimeapps.list`:
+  ```
+  [Default Applications]
+  ...
+  inode/directory=org.gnome.Nautilus.desktop;code.desktop;
+  ...
+  ```
 
 
