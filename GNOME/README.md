@@ -19,7 +19,7 @@ yay -S google-chrome
 For Gnome:
 ```sh
 yay -S google-chrome gdm-settings
-sudo pacman -S gnome-browser-connector gnome-tweaks power-profiles-daemon network-manager-applet networkmanager-openvpn
+sudo pacman -S gnome-browser-connector gnome-tweaks power-profiles-daemon network-manager-applet networkmanager-openvpn pavucontrol 
 ```
 
 ## The Theme
@@ -105,5 +105,27 @@ And then, edit the `~/.config/tmux/tmux.conf` file accordingly.</br>
   inode/directory=org.gnome.Nautilus.desktop;code.desktop;
   ...
   ```
+- Working with LaTeX:
+  ```sh
+  sudo pacman -S zathura zathura-djvu zathura-pdf-poppler
+  sudo pacman -S texlive-basic texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended texlive-fontsextra texlive-bibtexextra texlive-mathscience texlive-binextra texlive-publishers
+  ```
+- Working with Qemu:
+  ```sh
+  sudo pacman -Sy qemu-desktop libvirt iptables-nft dnsmasq openbsd-netcat virt-manager edk2-ovmf vde2 bridge-utils
+  sudo systemctl start libvirtd.service
+  sudo systemctl start virtlogd.service
+  sudo systemctl enable libvirtd.service
+  sudo nano /etc/libvirt/libvirtd.conf
+  
+  # uncomment the following:
+  #unix_sock_group = "libvirt"
+  #unix_sock_ro_perms = "0777"  # set to 0770 to deny non-group libvirt users
+  #unix_sock_rw_perms = "0770"
+  
+  sudo usermod -aG libvirt billy
+  reboot
+  ```
+
 
 
