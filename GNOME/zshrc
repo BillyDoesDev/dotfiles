@@ -40,7 +40,7 @@ if [[ "${terminfo[khome]}" != "" ]]; then
   bindkey "${terminfo[khome]}" beginning-of-line                # [Home] - Go to beginning of line
 fi
 bindkey '^[[8~' end-of-line                                     # End key
-bindkey '^[[F' end-of-line                                     # End key
+bindkey '^[[F' end-of-line                                      # End key
 if [[ "${terminfo[kend]}" != "" ]]; then
   bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
 fi
@@ -121,6 +121,8 @@ alias pacclean='sudo pacman -Scc && sudo pacman -Qdtq | sudo pacman -Rs -'
 alias yt-dlp='yt-dlp --trim-filenames 80 --embed-metadata'
 alias vaudio='pactl load-module module-null-sink sink_name=vsink && pactl load-module module-loopback sink=vsink'
 alias nfetch='neofetch --color_blocks off --disable model shell resolution de wm wm_theme theme icons term term_font gpu --ascii_distro arch_small'
+alias cat='bat'
+alias ssh-billy='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/BillyDoesDevGitHub_id_ed25519'
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -156,6 +158,20 @@ function compound(){
     fi
 }
 
+function pdfmerge() {
+  if [ "$#" -lt 2 ]; then
+    echo "usage: pdfmerge merged.pdf 1.pdf 2.pdf"
+    return 1
+  fi
+
+  gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile="$1" "${@:2}"
+}
+
+function check-space() {
+  du -cha --max-depth=1 ${1:-'.'} | grep -E "^[0-9\.]*[MG]"
+}
+
+
 ## Download the spaceship prompt if it isn't there already
 if [ ! -d "$HOME/.config/zsh/spaceship/" ]; then
    git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git "$HOME/.config/zsh/spaceship"
@@ -163,3 +179,9 @@ if [ ! -d "$HOME/.config/zsh/spaceship/" ]; then
 fi
 
 source "$HOME/.config/zsh/spaceship/spaceship.zsh"
+
+
+## conda setup
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
