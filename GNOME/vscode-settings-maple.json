@@ -1,0 +1,82 @@
+{
+    "files.autoSave": "afterDelay",
+    "telemetry.telemetryLevel": "off",
+    "window.titleBarStyle": "custom",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 0.4,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.title": "(≧σ≦)ノ ${dirty}${activeEditorShort}${separator}${rootName}$",
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.formatOnSave": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "discord.removeLowerDetails": true,
+    "discord.removeRemoteRepository": true,
+    "discord.suppressNotifications": true,
+    "cmake.options.statusBarVisibility": "hidden",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All, FixNamespaceComments: false }",
+    "cmake.showOptionsMovedNotification": false,
+    "notebook.lineNumbers": "on",
+    "code-runner.runInTerminal": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "r.rterm.linux": "/usr/bin/radian",
+    "r.bracketedPaste": true,
+    "terminal.integrated.env.linux": {
+        "R_HOME": "/usr/lib64/R"
+    },
+    "python.terminal.activateEnvironment": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "latex-workshop.formatting.latex": "latexindent",
+    "workbench.colorTheme": "Maple Dark",
+    "editor.semanticTokenColorCustomizations": {
+        "[Maple Dark]": {
+            "rules": {
+                "parameter": {
+                    "fontStyle": ""
+                },
+            }
+        }
+    },
+    "workbench.colorCustomizations": {
+        "[Maple Dark]": {
+            "tab.activeBackground": "#1e1e1f",
+            "tab.activeBorderTop": "#8bb3dc",
+            "widget.border": "#44444b7f",
+            "editor.selectionHighlightBorder": "#44444b7f",
+            "editor.snippetTabstopHighlightBorder": "#44444b7f",
+            "peekView.border": "#44444b7f",
+            "textBlockQuote.border": "#44444b7f",
+            "input.border": "#44444b7f",
+            "dropdown.border": "#44444b7f",
+            "list.inactiveFocusOutline": "#44444b7f",
+            "commandCenter.border": "#44444b7f",
+            "debugToolBar.border": "#44444b7f",
+            "activityBar.border": "#44444b7f",
+            "sideBar.border": "#44444b7f",
+            "sideBarSectionHeader.border": "#44444b7f",
+            "titleBar.border": "#44444b7f",
+            "statusBar.border": "#44444b7f",
+            "statusBar.debuggingBorder": "#44444b7f",
+            "statusBar.noFolderBorder": "#44444bcc",
+            "focusBorder": "#64748bb0",
+            "editor.findMatchBorder": "#64748bb0",
+            "inputOption.activeBorder": "#64748bb0",
+            "list.focusOutline": "#64748bcc",
+            "list.focusAndSelectionOutline": "#64748bb0",
+            "menu.selectionBorder": "#64748bb0",
+            "commandCenter.activeBorder": "#64748bb0",
+            "keybindingLabel.border": "#64748bb0",
+            "editor.lineHighlightBorder": "#00000000",
+            "editor.selectionBackground": "#47556993",
+            "panel.background": "#171718",
+            "terminal.background": "#171718"
+        }
+    }
+}
