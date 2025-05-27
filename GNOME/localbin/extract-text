@@ -9,7 +9,7 @@ xclip -selection clipboard -t image/png -o > "$IMG_FILE"
 
 # Check if the image was saved properly
 if [[ ! -s "$IMG_FILE" ]]; then
-    notify-send "Failed to get image from clipboard."
+    notify-send --transient "Failed to get image from clipboard."
     exit 1
 fi
 
@@ -18,14 +18,14 @@ tesseract "$IMG_FILE" "$TXT_FILE" quiet
 
 # Check for OCR output
 if [[ ! -s "${TXT_FILE}.txt" ]]; then
-    notify-send "Tesseract failed or produced no output."
+    notify-send --transient "Tesseract failed or produced no output."
     exit 1
 fi
 
 # Copy OCR result to clipboard
 xclip -selection clipboard < "${TXT_FILE}.txt"
 
-notify-send "OCR result copied to clipboard."
+notify-send --transient "OCR result copied to clipboard."
 
 # Optionally, clean up
 rm -f "$IMG_FILE" "$TXT_FILE" "${TXT_FILE}.txt"
