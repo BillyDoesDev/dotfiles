@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Temp file for image
+IMG_FILE="$HOME/.local/bin/temp/clipboard_image.png"
+TXT_FILE="$HOME/.local/bin/temp/ocr_output.txt"
+
+# Get image from clipboard (image/png) and save to file
+xclip -selection clipboard -t image/png -o > "$IMG_FILE"
+
+# Check if the image was saved properly
+if [[ ! -s "$IMG_FILE" ]]; then
+    notify-send "Failed to get image from clipboard."
+    exit 1
+fi
+
+# Run OCR with tesseract
+tesseract "$IMG_FILE" "$TXT_FILE" quiet
+
+# Check for OCR output
+if [[ ! -s "${TXT_FILE}.txt" ]]; then
+    notify-send "Tesseract failed or produced no output."
+    exit 1
+fi
+
+# Copy OCR result to clipboard
+xclip -selection clipboard < "${TXT_FILE}.txt"
+
+notify-send "OCR result copied to clipboard."
+
+# Optionally, clean up
+rm -f "$IMG_FILE" "$TXT_FILE" "${TXT_FILE}.txt"

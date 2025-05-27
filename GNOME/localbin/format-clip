@@ -1,0 +1,24 @@
+#!/bin/python
+
+import sys
+import pyperclip
+
+data = pyperclip.paste()
+data_ = ""
+
+if len(sys.argv) > 1 and sys.argv[1] == "n":
+    data_ = data.replace("\n", " ")
+    pyperclip.copy(data_)
+    sys.exit(0)
+
+if data.count(":") < 0.4 * len(data.splitlines()):
+    data_ = data.replace("\n\n", "\n")
+else:
+    for line in data.splitlines():
+        if line.endswith(":"):
+            data_ += "> " + line.strip(":").strip() + ": "
+        else:
+            data_ += line
+    data_ = data_.replace("\n", " ").replace("> ", "\n")
+
+pyperclip.copy(data_)
