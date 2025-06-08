@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# downloads a given compound in the current working dir
+# Example usage:
+# compound 500 500 000000 breh
+
+if [ $# != 4 ]; then
+    echo "Usage: compound <x_res> <y_res> <fg_hex_code> <valid_compound_name>"
+    echo "The file will be saved in the current working dir"
+    else
+        curl -s -o "$4_$1x$2.png" "https://avogadr.io/api/name/$1/$2/$3/$4"
+        echo "$4_$1x$2.png"
+fi

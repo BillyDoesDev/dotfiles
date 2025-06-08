@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ "$#" -lt 2 ]; then
+    echo "Ref: https://askubuntu.com/questions/113544/how-can-i-reduce-the-file-size-of-a-scanned-pdf-file"
+    echo "Usage: compress-pdf <input_file> <output_file> [quality]"
+    echo "Quality options (default: ebook):"
+    echo "  screen   - Lower quality, smaller size (72 dpi)"
+    echo "  ebook    - Better quality, slightly larger pdfs (150 dpi)"
+    echo "  prepress - High quality for prepress (300 dpi)"
+    echo "  printer  - Print optimized setting (300 dpi)"
+    echo "  default  - General purpose setting"
+    exit 1
+fi
+
+input_file="$1"
+output_file="$2"
+quality="${3:-ebook}"
+
+case "$quality" in
+    screen|ebook|prepress|printer|default)
+        gs -sDEVICE=pdfwrite \
+        -dCompatibilityLevel=1.4 \
+        -dPDFSETTINGS="/$quality" \
+        -dNOPAUSE -dQUIET -dBATCH \
+        -sOutputFile="$output_file" "$input_file"
+        ;;
+    *)
+        echo "Invalid quality option. Use: screen, ebook, prepress, printer, or default."
+        exit 1
+        ;;
+esac

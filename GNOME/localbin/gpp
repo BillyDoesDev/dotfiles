@@ -1,0 +1,50 @@
+#!/bin/bash
+
+if [[ $# -lt 1 ]]; then
+    echo "Usage: cpp [compiler flags] <file.cpp> [-- executable args]"
+    exit 1
+fi
+
+compiler_flags=()
+exec_args=()
+src=""
+found_cpp=false
+
+# Separate compiler flags and source file
+for arg in "$@"; do
+    if [[ "$arg" == "--" ]]; then
+        shift
+        exec_args=("$@")
+        break
+    elif [[ "$arg" == *.cpp ]]; then
+        src="$arg"
+        found_cpp=true
+    elif [[ "$found_cpp" == false ]]; then
+        compiler_flags+=("$arg")
+    fi
+    shift
+done
+
+if [[ -z "$src" ]]; then
+    echo "Error: No .cpp file provided."
+    exit 1
+fi
+
+base="${src##*/}"         # e.g. e21mergeSorted.cpp
+name="${base%.cpp}"       # e.g. e21mergeSorted
+bin_dir="./bin"
+out="$bin_dir/$name"
+
+mkdir -p "$bin_dir"
+
+echo "Compiling $src -> $out"
+g++ "${compiler_flags[@]}" "$src" -o "$out"
+
+if [[ $? -eq 0 ]]; then
+    echo "Running $out ${exec_args[*]}"
+    echo "--------------------------------------"
+    "$out" "${exec_args[@]}"
+else
+    echo "Compilation failed."
+    exit 1
+fi
