@@ -1,0 +1,87 @@
+#!/bin/bash
+
+set -e
+
+# Help function
+print_help() {
+  cat <<EOF
+Usage: ./convert_to_md.sh [DIRECTORY] [--purge]
+
+Recursively convert .docx and .pdf files to Markdown.
+
+Arguments:
+  DIRECTORY   Optional. Directory to start scanning from. Defaults to current directory.
+  --purge     Optional. If provided, delete original files after conversion.
+  -h, --help  Show this help message and exit.
+
+Behavior:
+- .docx files are converted to Markdown using pandoc.
+- .pdf files are converted using pdftohtml (no images), then pandoc.
+- Output .md files are saved in the same location as the originals, with spaces replaced by underscores.
+- Unless --purge is used, original files are moved to a "residue/" folder in the root directory.
+EOF
+  exit 0
+}
+
+# Default values
+PURGE=false
+ROOT_DIR="."
+
+# Parse arguments
+for arg in "$@"; do
+  case "$arg" in
+    --purge) PURGE=true ;;
+    -h|--help) print_help ;;
+    *) ROOT_DIR="$arg" ;;
+  esac
+done
+
+ROOT_DIR="$(realpath "$ROOT_DIR")"
+# RESIDUE_DIR="$ROOT_DIR/residue"
+
+# mkdir -p "$RESIDUE_DIR"
+
+# Find and process files
+# find "$ROOT_DIR" -type f \( -iname "*.docx" -o -iname "*.pdf" \) | while read -r file; do
+find "$ROOT_DIR" -type d -name "residue" -prune -o -type f \( -iname "*.docx" -o -iname "*.pdf" \) -print | while read -r file; do
+  dir=$(dirname "$file")
+
+  RESIDUE_DIR="$dir/residue"
+  mkdir -p "$RESIDUE_DIR"
+
+  base=$(basename "$file")
+  ext="${base##*.}"
+  name="${base%.*}"
+  name_sanitized=$(echo "$name" | tr ' ' '_')
+  output_md="$dir/$name_sanitized.md"
+
+  echo "Processing: $file"
+
+  if [[ "$ext" == "docx" ]]; then
+    pandoc "$file" -o "$output_md"
+  elif [[ "$ext" == "pdf" ]]; then
+    temp_html="$dir/$name_sanitized.temp.html"
+    pdftohtml -c -hidden -noframes -i "$file" "$temp_html"
+    pandoc "$temp_html" -o "$output_md"
+    rm -f "$temp_html"
+    rm -f "output0*png"
+  fi
+
+  if $PURGE; then
+    rm -f "$file"
+  else
+    mv "$file" "$RESIDUE_DIR/"
+  fi
+
+  echo "[*] Saved: $output_md"
+done
+
+# Cleanup any leftover temp HTML files
+find "$ROOT_DIR" -type f -name "*.temp.html" -exec rm -f {} +
+
+echo "[*] Conversion complete."
+if $PURGE; then
+  echo "Original files deleted (--purge active)."
+else
+  echo "Original files moved to: $RESIDUE_DIR"
+fi
