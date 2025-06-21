@@ -1,0 +1,122 @@
+#!/bin/bash
+
+# Convert a string to PascalCase
+to_pascal_case() {
+    echo "$1" | sed -E 's/(^|_)([a-z])/\U\2/g'
+}
+
+# Show help message
+show_help() {
+    cat <<EOF
+Usage:
+  cs scaffold <name>     Scaffold a PascalCase C# file called <Name>.cs in the current directory
+  cs run <File.cs>       Compile and run File.cs using Mono (output to bin/binaries/)
+  cs init                Create a .editorconfig file with basic C# formatting rules
+  cs compile-outputs     Run all .cs files (except Program.cs) and log code + output to output.md
+  cs -h | --help         Show this help message
+EOF
+    exit 0
+}
+
+# No arguments -> show help
+if [[ $# -eq 0 ]]; then
+    show_help
+fi
+
+# Help flag
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    show_help
+fi
+
+# Init mode
+if [[ "$1" == "init" ]]; then
+    cat > .editorconfig <<EOF
+# CSharp formatting rules:
+[*.cs]
+csharp_new_line_before_open_brace = none
+csharp_new_line_before_else = false
+csharp_new_line_before_catch = false
+csharp_new_line_before_finally = false
+EOF
+
+    echo "Initialized .editorconfig with C# formatting rules."
+    exit 0
+fi
+
+# Scaffold mode
+if [[ "$1" == "scaffold" && -n "$2" ]]; then
+    raw_name="$2"
+    class_name=$(to_pascal_case "$raw_name")
+    file_name="${class_name}.cs"
+
+    cat > "$file_name" <<EOF
+using System;
+
+class $class_name {
+    public static void Main() {
+        Console.WriteLine("Hello, world");
+    }
+}
+EOF
+
+    echo "Scaffolded: $file_name"
+    exit 0
+fi
+
+# Run mode
+if [[ "$1" == "run" && -n "$2" ]]; then
+    file="$2"
+    file_base=$(basename "$file" .cs)
+
+    if [[ ! -f "$file" ]]; then
+        echo "Error: File '$file' not found."
+        exit 1
+    fi
+
+    mkdir -p bin/binaries
+
+    mcs "$file" -out:"bin/binaries/${file_base}.exe" && \
+    mono "bin/binaries/${file_base}.exe"
+    exit $?
+fi
+
+# compile-outputs mode
+if [[ "$1" == "compile-outputs" ]]; then
+    out_file="outputs.md"
+    > "$out_file"
+
+    for f in *.cs; do
+        [[ "$f" == "Program.cs" ]] && continue
+        [[ ! -f "$f" ]] && continue
+
+        echo "## \`$f\`:" >> "$out_file"
+        echo '```csharp' >> "$out_file"
+        cat "$f" >> "$out_file"
+        echo '```' >> "$out_file"
+
+        echo -e "\n## Output:" >> "$out_file"
+        mkdir -p bin/binaries
+        file_base=$(basename "$f" .cs)
+        mcs "$f" -out:"bin/binaries/${file_base}.exe" 2>&1
+        if [[ $? -eq 0 ]]; then
+            mono_output=$(mono "bin/binaries/${file_base}.exe" 2>&1)
+            echo '```' >> "$out_file"
+            echo "$mono_output" >> "$out_file"
+            echo '```' >> "$out_file"
+        else
+            echo '```' >> "$out_file"
+            echo "Compilation failed for $f" >> "$out_file"
+            echo '```' >> "$out_file"
+        fi
+
+        echo -e "\n<hr>\n" >> "$out_file"
+    done
+
+    echo "Compiled all .cs files to output.md"
+    exit 0
+fi
+
+# Fallback for invalid usage
+echo "Error: Invalid usage"
+echo "Try 'cs --help' for usage information."
+exit 1
