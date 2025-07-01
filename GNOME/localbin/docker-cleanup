@@ -1,0 +1,157 @@
+#!/bin/bash
+
+# docker-cleanup.sh
+# Clean up Docker resources with optional confirmations
+
+set -e
+
+show_help() {
+    cat <<EOF
+Usage: ./docker-cleanup.sh [OPTIONS]
+
+Cleans up unused Docker resources:
+- Stopped containers
+- Dangling images
+- Unused volumes
+- Dangling networks
+- Orphaned Docker Compose resources
+- Docker builder cache
+- Full system prune
+
+Options:
+  --noconfirm     Skip confirmation prompts and purge automatically
+  -h, --help      Show this help message
+EOF
+}
+
+log() {
+    printf "\033[0;36m[$(date '+%Y-%m-%d %H:%M:%S')]\033[0m $*\n"
+}
+
+CONFIRM=true
+
+# Parse args
+for arg in "$@"; do
+    case "$arg" in
+        --noconfirm)
+            CONFIRM=false
+            ;;
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $arg"
+            show_help
+            exit 1
+            ;;
+    esac
+done
+
+confirm_action() {
+    local prompt="$1"
+    if $CONFIRM; then
+        read -rp "$prompt [Y/n]: " response
+        if [[ -z "$response" || "$response" =~ ^[Yy]$ ]]; then
+            return 0
+        else
+            return 1
+        fi
+    else
+        return 0
+    fi
+}
+
+log "Scanning for unused Docker resources..."
+
+# Stopped containers
+stopped_containers=$(docker ps -a -q -f status=exited -f status=created)
+if [[ -n "$stopped_containers" ]]; then
+    log "Found stopped/created containers:"
+    docker ps -a -f status=exited -f status=created
+    if confirm_action "Remove all these containers?"; then
+        docker rm $stopped_containers
+    fi
+else
+    log "No stopped containers found."
+fi
+
+# Dangling images
+dangling_images=$(docker images -f "dangling=true" -q)
+if [[ -n "$dangling_images" ]]; then
+    log "Found dangling images:"
+    docker images -f "dangling=true"
+    if confirm_action "Remove all dangling images?"; then
+        for img in $dangling_images; do
+            repo=$(docker image inspect --format='{{.RepoTags}}' "$img" 2>/dev/null || echo "<untagged>")
+            log "Removing image: $repo ($img)"
+            docker rmi "$img"
+        done
+    fi
+else
+    log "No dangling images found."
+fi
+
+# Unused volumes
+unused_volumes=$(docker volume ls -qf dangling=true)
+if [[ -n "$unused_volumes" ]]; then
+    log "Found unused volumes:"
+    docker volume ls -f dangling=true
+    if confirm_action "Remove all unused volumes?"; then
+        for vol in $unused_volumes; do
+            log "Removing volume: $vol"
+            docker volume rm "$vol"
+        done
+    fi
+else
+    log "No unused volumes found."
+fi
+
+# Dangling networks
+dangling_networks=$(docker network ls -q -f dangling=true)
+if [[ -n "$dangling_networks" ]]; then
+    log "Found dangling networks:"
+    docker network ls -f dangling=true
+    if confirm_action "Remove all dangling networks?"; then
+        for net in $dangling_networks; do
+            name=$(docker network inspect --format='{{.Name}}' "$net")
+            log "Removing network: $name ($net)"
+            docker network rm "$net"
+        done
+    fi
+else
+    log "No dangling networks found."
+fi
+
+# Docker Compose orphaned services
+if command -v docker-compose &>/dev/null || docker compose version &>/dev/null; then
+    if confirm_action "Remove orphaned Docker Compose services (docker compose down --remove-orphans)?"; then
+        log "Attempting to remove orphaned Docker Compose services..."
+        
+        # Try docker compose first
+        if docker compose version &>/dev/null; then
+            docker compose down --remove-orphans || log "docker compose down failed or no project found."
+        elif command -v docker-compose &>/dev/null; then
+            docker-compose down --remove-orphans || log "docker-compose down failed or no project found."
+        else
+            log "Docker Compose command is not available."
+        fi
+    fi
+else
+    log "Docker Compose not found, skipping orphan cleanup."
+fi
+
+
+# Builder cache
+if confirm_action "Prune Docker builder cache (--all --force)?"; then
+    log "Pruning Docker builder cache..."
+    docker builder prune --all --force
+fi
+
+# Full system prune
+if confirm_action "Run full system prune (remove ALL unused data)?"; then
+    log "Running full system prune..."
+    docker system prune -f --volumes
+fi
+
+log "Docker cleanup complete."
