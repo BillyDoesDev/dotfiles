@@ -1,8 +1,66 @@
 #!/bin/bash
 
-if [ "$#" -lt 2 ]; then
-  echo "usage: pdfmerge merged.pdf 1.pdf 2.pdf ..."
+show_help() {
+  cat <<EOF
+Usage:
+  pdfmerge input1.pdf input2.pdf ... -o output.pdf
+
+Example:
+  pdfmerge dir/*.pdf -o merged.pdf
+
+Options:
+  -o FILE     Specify output PDF file
+  -h          Show this help message
+EOF
+}
+
+# Show help if no args
+if [ "$#" -eq 0 ]; then
+  show_help
   exit 1
 fi
 
-gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile="$1" "${@:2}"
+output=""
+inputs=()
+
+# Parse arguments
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    -h|--help)
+      show_help
+      exit 0
+      ;;
+    -o)
+      shift
+      if [ -z "$1" ]; then
+        echo "Error: -o requires a filename"
+        exit 1
+      fi
+      output="$1"
+      ;;
+    *)
+      inputs+=("$1")
+      ;;
+  esac
+  shift
+done
+
+# Validation
+if [ -z "$output" ]; then
+  echo "Error: Output file not specified. Use -o output.pdf"
+  exit 1
+fi
+
+if [ "${#inputs[@]}" -lt 1 ]; then
+  echo "Error: No input files provided"
+  exit 1
+fi
+
+# Merge using Ghostscript
+gs -dBATCH -dNOPAUSE -q \
+   -sDEVICE=pdfwrite \
+   -dPDFSETTINGS=/prepress \
+   -sOutputFile="$output" \
+   "${inputs[@]}"
+
+exit $?
