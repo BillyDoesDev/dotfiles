@@ -123,8 +123,10 @@ alias vaudio='pactl load-module module-null-sink sink_name=vsink && pactl load-m
 alias nfetch='neofetch --color_blocks off --disable model shell resolution de wm wm_theme theme icons term term_font gpu --ascii_distro arch_small'
 # alias cat='bat'
 alias ssh-billy='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/BillyDoesDevGitHub_id_ed25519'
-alias warp-off='systemctl --user disable --now warp-taskbar && sudo systemctl disable --now warp-svc.service'
-alias warp-on='sudo systemctl enable --now warp-svc.service && systemctl --user enable --now warp-taskbar'
+alias warp-enable='sudo systemctl enable --now warp-svc.service && systemctl --user enable --now warp-taskbar'
+alias warp-disable='systemctl --user disable --now warp-taskbar && sudo systemctl disable --now warp-svc.service'
+alias warp-on='sudo systemctl restart warp-svc.service && systemctl --user restart warp-taskbar'
+alias warp-off='systemctl --user stop warp-taskbar && sudo systemctl stop warp-svc.service'
 
 # Theming section  
 autoload -U compinit colors zcalc
