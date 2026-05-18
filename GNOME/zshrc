@@ -121,8 +121,10 @@ alias pacclean='sudo pacman -Scc && sudo pacman -Qdtq | sudo pacman -Rs -'
 alias yt-dlp='yt-dlp --trim-filenames 80 --embed-metadata --no-mtime'
 alias vaudio='pactl load-module module-null-sink sink_name=vsink && pactl load-module module-loopback sink=vsink'
 alias nfetch='neofetch --color_blocks off --disable model shell resolution de wm wm_theme theme icons term term_font gpu --ascii_distro arch_small'
-alias cat='bat'
+# alias cat='bat'
 alias ssh-billy='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/BillyDoesDevGitHub_id_ed25519'
+alias warp-off='systemctl --user disable --now warp-taskbar && sudo systemctl disable --now warp-svc.service'
+alias warp-on='sudo systemctl enable --now warp-svc.service && systemctl --user enable --now warp-taskbar'
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -157,6 +159,6 @@ source "$HOME/.config/zsh/spaceship/spaceship.zsh"
 
 
 ## conda setup
-export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+# export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+# [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
