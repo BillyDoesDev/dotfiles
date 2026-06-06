@@ -119,14 +119,24 @@ alias egrep='egrep --color=auto'
 alias owoify="sed 's/r/w/g;s/l/w/g;s/na/nya/g;s/ne/nye/g;s/ni/nyi/g;s/no/nyo/g;s/nu/nyu/g;s/he/hye/g'"
 alias pacclean='sudo pacman -Scc && sudo pacman -Qdtq | sudo pacman -Rs -'
 alias yt-dlp='yt-dlp --trim-filenames 80 --embed-metadata --no-mtime'
-alias vaudio='pactl load-module module-null-sink sink_name=vsink && pactl load-module module-loopback sink=vsink'
+
+alias vaudio='pactl load-module module-null-sink sink_name=obs_virtual_sink sink_properties=device.description="OBS Virtual Sink"'
+## use the following to inspect:
+# pactl list short sinks
+# pactl list short modules | grep -i module-null-sink
+# pactl list short sink-inputs
+
 alias nfetch='neofetch --color_blocks off --disable model shell resolution de wm wm_theme theme icons term term_font gpu --ascii_distro arch_small'
 # alias cat='bat'
 alias ssh-billy='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/BillyDoesDevGitHub_id_ed25519'
+
+# Networks and VPNs
 alias warp-enable='sudo systemctl enable --now warp-svc.service && systemctl --user enable --now warp-taskbar'
 alias warp-disable='systemctl --user disable --now warp-taskbar && sudo systemctl disable --now warp-svc.service'
 alias warp-on='sudo systemctl restart warp-svc.service && systemctl --user restart warp-taskbar'
 alias warp-off='systemctl --user stop warp-taskbar && sudo systemctl stop warp-svc.service'
+alias tailscale-on='sudo systemctl start tailscaled.service && systemctl start --user tailscale-systray.service'
+alias tailscale-off='tailscale down && systemctl stop --user tailscale-systray.service && sudo systemctl stop tailscaled.service'
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -151,6 +161,18 @@ function check-space() {
   du -cha --max-depth=1 ${1:-'.'} | grep -E "^[0-9\.]*[MG]"
 }
 
+function brown-noise() {
+    if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+        echo "Usage: brown-noise [lowpass_freq] (Default 50Hz)"
+        echo "Runs brown noise through ffmpeg piped into mpv."
+        return 0
+    fi
+
+    local lp="${1:-50}"
+
+    ffmpeg -f lavfi -i "anoisesrc=color=brown,lowpass=f=${lp}" -f nut - 2>/dev/null | mpv -
+}
+
 ## Download the spaceship prompt if it isn't there already
 if [ ! -d "$HOME/.config/zsh/spaceship/" ]; then
    git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git "$HOME/.config/zsh/spaceship"
@@ -161,6 +183,6 @@ source "$HOME/.config/zsh/spaceship/spaceship.zsh"
 
 
 ## conda setup
-# export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
-# [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+#export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+#[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
