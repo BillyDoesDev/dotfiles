@@ -1,0 +1,85 @@
+#!/bin/bash
+
+if [[ $# -lt 1 ]]; then
+    echo "Usage: compile [-c compiler] [compiler flags] <file.{c,cpp}> [-- program args]"
+    exit 1
+fi
+
+compiler_flags=()
+exec_args=()
+src=""
+forced_compiler=""
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -c)
+            shift
+            forced_compiler="$1"
+            ;;
+        --)
+            shift
+            exec_args=("$@")
+            break
+            ;;
+        *.cpp|*.cc|*.cxx|*.c)
+            src="$1"
+            ;;
+        *)
+            if [[ -z "$src" ]]; then
+                compiler_flags+=("$1")
+            fi
+            ;;
+    esac
+    shift
+done
+
+if [[ -z "$src" ]]; then
+    echo "Error: No source file provided."
+    exit 1
+fi
+
+# Select compiler
+if [[ -n "$forced_compiler" ]]; then
+    compiler="$forced_compiler"
+else
+    case "$src" in
+        *.cpp|*.cc|*.cxx)
+            compiler="g++"
+            ;;
+        *.c)
+            compiler="gcc"
+            ;;
+        *)
+            echo "Unsupported source file type."
+            exit 1
+            ;;
+    esac
+fi
+
+# Validate compiler exists
+if ! command -v "$compiler" &>/dev/null; then
+    echo "Error: compiler '$compiler' not found."
+    exit 1
+fi
+
+base="${src##*/}"
+name="${base%.*}"
+
+bin_dir="./bin"
+out="$bin_dir/$name"
+
+mkdir -p "$bin_dir"
+
+echo "Compiler: $compiler"
+echo "Compiling $src -> $out"
+"$compiler" "${compiler_flags[@]}" "$src" -o "$out"
+
+if [[ $? -eq 0 ]]; then
+    echo "Running: $out ${exec_args[*]}"
+    echo "--------------------------------------"
+    "$out" "${exec_args[@]}"
+else
+    echo "Compilation failed."
+    exit 1
+fi
