@@ -7,7 +7,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
    mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+   git clone --depth=1 https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Source/Load zinit
@@ -128,7 +128,7 @@ alias vaudio='pactl load-module module-null-sink sink_name=obs_virtual_sink sink
 
 alias nfetch='neofetch --color_blocks off --disable model shell resolution de wm wm_theme theme icons term term_font gpu --ascii_distro arch_small'
 # alias cat='bat'
-alias ssh-billy='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/BillyDoesDevGitHub_id_ed25519'
+# alias ssh-billy='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/BillyDoesDevGitHub_id_ed25519'
 
 # Networks and VPNs
 alias warp-enable='sudo systemctl enable --now warp-svc.service && systemctl --user enable --now warp-taskbar'
@@ -180,7 +180,7 @@ if [ ! -d "$HOME/.config/zsh/spaceship/" ]; then
 fi
 
 source "$HOME/.config/zsh/spaceship/spaceship.zsh"
-
+export PATH="${PATH}:${HOME}/.local/bin"
 
 ## conda setup
 #export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
