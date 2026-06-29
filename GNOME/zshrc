@@ -163,15 +163,25 @@ function check-space() {
 
 function brown-noise() {
     if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-        echo "Usage: brown-noise [lowpass_freq] (Default 50Hz)"
+        echo "Usage: brown-noise [lowpass_freq] (Default 100Hz)"
         echo "Runs brown noise through ffmpeg piped into mpv."
         return 0
     fi
 
-    local lp="${1:-50}"
-
+    local lp="${1:-100}"
     ffmpeg -f lavfi -i "anoisesrc=color=brown,lowpass=f=${lp}" -f nut - 2>/dev/null | mpv -
 }
+
+function cheat() {
+    t=0;
+    [[ $1 == -t || $1 == --tldr ]] && { shift; t=1; }
+    [[ $# -eq 0 ]] && { echo "usage: cheat [-t|--tldr] <search term>" >&2; return 1; }
+    echo "curling <https://cheat.sh/${*:gs/ /\/}>"
+    ((t)) && \
+      curl -s "cheat.sh/${*:gs/ /\/}" | sed -n '/tldr:/,$p' || \
+      curl -s "cheat.sh/${*:gs/ /\/}"
+}
+
 
 ## Download the spaceship prompt if it isn't there already
 if [ ! -d "$HOME/.config/zsh/spaceship/" ]; then
